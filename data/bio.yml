@@ -1,44 +1,60 @@
-- title: Experience
+- title: Expériences professionnelles
   items:
-    - header: "1842 - 1843"
-      title: "Mathematician and Writer"
+    - header: "2022 - Aujourd'hui"
+      title: "Team lead Developer Advocate / Developer Relation"
       content: |
-        Translated and annotated Luigi Menabrea's paper on Charles
-        Babbage's Analytical Engine. Added extensive original notes,
-        including the first published algorithm designed for a machine.
+        **OVHcloud**, Paris — AI/ML · IaC · Cloud Native · Docker · Java · Python
 
-        **Key contributions:**
-        - Recognized the machine's potential beyond pure calculation
-        - Described how the engine could handle letters and symbols
-        - Published what is now considered the first computer program
+        - Developer Advocate au sein des équipes public cloud d'OVHcloud et plus
+          particulièrement d'Intelligence Artificielle et cloud native.
+        - Client zéro auprès des équipes produits pour tester les produits.
+        - Participation aux conférences en tant qu'orateur et tenue de stand.
+        - Animations des communautés de développement en interne et en externe.
+        - Technical writer pour les guides officiels et des blog posts d'entreprise.
+        - Participation aux évolutions produits en étroite relation avec les PO et PM.
+        - Développement de POC et démos.
+        - Organisation et animation de la vie d'équipe en tant que team lead
+          (4 personnes).
 
-- title: Education
-  items:
-    - header: "1830 - 1835"
-      title: "Private Tutoring"
+    - header: "2008 - 2022"
+      title: "Tech lead Architecte Logiciel / Platform engineer"
       content: |
-        Studied mathematics and science under Augustus De Morgan
-        and Mary Somerville, two of the leading scientific minds
-        of the era.
+        **Harmonie-Mutuelle**, Tours — Java · Jenkins · Docker · Kubernetes · CI/CD
 
-    - header: "1833"
-      title: "Meeting Charles Babbage"
-      content: |
-        Introduced to Charles Babbage at a party, where she first
-        encountered the Difference Engine. This meeting sparked a
-        lifelong collaboration on computational machinery.
+        - Mise à disposition de socles pour les équipes de développement :
+          Spring\*, JEE, Angular, Business Works (ESB).
+        - Développement de Frameworks internes (SpringBoot & Angular).
+        - Conception et réalisation de la plateforme d'intégration continue basée
+          sur Jenkins 2 (“pipelines as code”), SonarQube et GitHub.
+        - Mise en place de la chaîne “CI / CD” sur OpenShift.
+        - Organisation et animation de la vie d'équipe en tant que tech lead
+          (5 personnes).
 
-- title: Skills
-  items:
-    - header: "Mathematics"
-      title: "Analytical and Computational"
+    - header: "2006 - 2008"
+      title: "Ingénieur logiciel Java / JEE"
       content: |
-        Advanced mathematical analysis, number theory, and logic.
-        Pioneering work in algorithmic thinking and computational
-        theory.
+        **Apside TOP**, Tours — Java · JEE · HTML · CSS
 
-    - header: "Languages"
-      title: "Communication"
+        - Mise en place d'applications Web en tant qu'expert JEE en prestation chez
+          Coface Services et accompagnement du personnel interne dans sa montée en
+          compétences.
+        - Rôle de tech lead au sein des équipes.
+
+    - header: "2004 - 2006"
+      title: "Chef de projet technique"
       content: |
-        Fluent in English and French. Skilled technical writer,
-        known for clarity and precision in scientific communication.
+        **Delta Informatique**, Tours — Java · JEE · HTML · CSS
+
+        - Mise en place de sites web (secteur banque et assurances) en JEE (déployés
+          sur Weblogic) comme développeur expert puis chef de projets techniques
+          (spécifications techniques, développement et mise en place chez les
+          clients) sur les mêmes technologies.
+
+    - header: "2002 - 2004"
+      title: "Ingénieur Java / JEE"
+      content: |
+        **Prima Solutions**, Paris — Java · JEE · HTML · CSS
+
+        - Développement de front end et back end dans le secteur assurance et pour le
+          site assurland.com.
+        - Accompagnement clientèle pour le déploiement de solutions JEE / Weblogic.
