@@ -1,11 +1,14 @@
-firstName: Ada
-lastName: Lovelace
-picture: ada.png
-jobTitle: Computational Pioneer
-city: London
-country: United Kingdom
+firstName: Stéphane
+lastName: Philippart
+picture: stephane_philippart.jpg
+jobTitle: Developer Relations / Developer Advocate
+city: Tours
+country: France
+email: s.philippart@gmail.com
+site: https://philippart-s.github.io/blog/
 bio: |
-  Ada Lovelace was a 19th-century mathematician known for her
-  visionary work on Charles Babbage's Analytical Engine.
-  She wrote the first published algorithm designed for a machine,
-  making her one of the most influential figures in computing history.
+  Developer Advocate chez OVHcloud, après de nombreuses années passées dans
+  le développement, l'expertise et l'architecture logicielle.
+
+  Le partage est un élément essentiel pour moi : conférences, podcast,
+  Twitch, articles et blog posts techniques.
