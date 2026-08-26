@@ -1,0 +1,19 @@
+- value: "24 ans"
+  label: "d'expérience"
+  detail: "développement, architecture, platform engineering, advocacy"
+
+- value: "77"
+  label: "talks en conférence"
+  detail: "en 4 ans, circuit européen Java & cloud"
+
+- value: "100+"
+  label: "articles techniques"
+  detail: "blog, guides produit, presse spécialisée"
+
+- value: "250"
+  label: "développeurs outillés"
+  detail: "socles et CI/CD sur plus de 200 applications"
+
+- value: "70"
+  label: "meetups organisés"
+  detail: "TADx, 7 ans"
