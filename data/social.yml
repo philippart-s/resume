@@ -17,15 +17,3 @@
 - name: Stack Overflow
   type: wilda
   url: https://stackoverflow.com/users/2471248/wilda
-
-- name: Noti.st
-  type: Slides et vidéos des conférences
-  url: https://noti.st/philippart-s
-
-- name: Podcast
-  type: Tranches de Tech
-  url: https://podcast.ausha.co/tranches-de-tech
-
-- name: Twitch
-  type: Replays des lives
-  url: https://bit.ly/twitch-replays

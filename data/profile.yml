@@ -1,33 +1,15 @@
 firstName: Stéphane
 lastName: Philippart
 picture: stephane_philippart.jpg
-jobTitle: Developer Relation / Developer Advocate
+jobTitle: Senior Developer Advocate — Java & IA / Cloud Native
 city: Tours
 country: France
 email: s.philippart@gmail.com
 site: https://philippart-s.github.io/blog/
 bio: |
-  Après de nombreuses années passées dans le monde du développement, de
-  l'expertise et de l'architecture logicielle j'ai choisi de changer de voie.
-  En effet, les relations avec les développeuses et développeurs étant un
-  élément très important pour moi j'ai décidé de devenir Developer Advocate.
-
-  Le partage est un élément essentiel pour moi : c'est pourquoi j'ai co-créé
-  une association dont le but est d'organiser des meetups autour de l'agilité
-  et du DevOps : [TADx](https://www.tadx.fr).
-
-  Toujours dans le but de partager :
-
-  - je suis speaker lors de conférences (l'ensemble de mes conférences est
-    disponible [ici](https://noti.st/philippart-s)) ;
-  - je suis animateur d'un podcast mensuel
-    ([Tranches de Tech](https://podcast.ausha.co/tranches-de-tech)) ;
-  - j'anime des [Twitch](https://bit.ly/twitch-replays) ;
-  - j'écris des articles pour le magazine Programmez ;
-  - j'écris des documentations et blog posts pour mon entreprise ;
-  - j'écris des blog posts techniques sur mon
-    [blog personnel](https://philippart-s.github.io/blog/).
-
-  Au sein de mes différentes équipes j'ai souvent endossé le rôle de team lead
-  (ou tech lead) afin d'organiser au mieux l'équipe mais aussi de définir la
-  stratégie de l'équipe.
+  Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques par des développeurs. 
+  Pendant 14 ans en interne, comme architecte et platform engineer, socles Java et chaîne CI/CD utilisés par 250 développeurs sur plus de 200 applications. 
+  Depuis 2022 en public, comme Developer Advocate : 77 talks en conférence, plus de 100 articles techniques, 70 meetups organisés.
+  
+  Je travaille aujourd'hui à l'intersection de la JVM et de l'IA appliquée : RAG, tool calling, MCP, agents.
+  Un croisement encore peu couvert dans un écosystème majoritairement Python.

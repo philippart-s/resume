@@ -1,138 +1,58 @@
 - title: Expériences professionnelles
   items:
-    - header: "2022 - Aujourd'hui"
-      title: "Team lead Developer Advocate / Developer Relation"
+    - header: "OVHcloud, 2022 → aujourd'hui"
+      title: "Senior Developer Advocate & Team Lead"
       content: |
-        **OVHcloud**, Paris — AI/ML · IaC · Cloud Native · Docker · Java · Python
+        OVHcloud (Paris, remote) _IA · Cloud native · Java · Python · Docker · Kubernetes_
 
-        - Developer Advocate au sein des équipes public cloud d'OVHcloud et plus
-          particulièrement d'Intelligence Artificielle et cloud native.
-        - Client zéro auprès des équipes produits pour tester les produits.
-        - Participation aux conférences en tant qu'orateur et tenue de stand.
-        - Animations des communautés de développement en interne et en externe.
-        - Technical writer pour les guides officiels et des blog posts d'entreprise.
-        - Participation aux évolutions produits en étroite relation avec les PO et PM.
-        - Développement de POC et démos.
-        - Organisation et animation de la vie d'équipe en tant que team lead
-          (4 personnes).
+        - Lead d'une équipe DevRel de 3 personnes pendant 2 ans : encadrement, stratégie d'équipe, budget annuel, onboarding d'un nouvel entrant.
+        - **77 talks** en 4 ans (~19/an) sur le circuit européen Java et cloud — Devoxx France, UK, Belgique, Voxxed Days Zurich, Confoo. Audience maximale : 500 personnes. **Un talk sur les CLI IA sélectionné plus de 20 fois par des comités de programme.**
+        - Plus de **100 articles techniques** : blog personnel, guides officiels produit, magazine Programmez. Publications atteignant régulièrement ~1 000 interactions professionnelles.
+        - **Intégration des produits IA OVHcloud à Docker Model Runner** et correction d'endpoints IA inexploitables dans plusieurs frameworks open source — remontée directe des défauts en amont produit.
+        - Premier utilisateur interne des produits IA avant mise sur le marché : détection et remontée aux PM/PO des défauts d'API avant exposition publique.
+        - Développement de POC et démos servant de support aux talks et à la documentation officielle.
 
-    - header: "2008 - 2022"
-      title: "Tech lead Architecte Logiciel / Platform engineer"
+    - header: "Communauté & production publique"
+      title: ""
+      content:  |
+        - **[TADx](https://www.tadx.fr/)** — Co-fondateur du meetup tech de Tours. **70 éditions en 7 ans**, 20 à 30 participants par édition.
+        - **Tranches de Tech** — Co-animateur du podcast technique mensuel. 30 épisodes.
+        - **Blog technique** — https://philippart-s.github.io/blog
+        - **Talks** — https://philippart-s.github.io/blog/conferences/
+
+    - header: "Harmonie Mutuelle, 2008 → 2022"
+      title: "Tech Lead / Architecte logiciel & Platform Engineer"
       content: |
-        **Harmonie-Mutuelle**, Tours — Java · Jenkins · Docker · Kubernetes · CI/CD
+        **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
-        - Mise à disposition de socles pour les équipes de développement :
-          Spring\*, JEE, Angular, Business Works (ESB).
-        - Développement de Frameworks internes (SpringBoot & Angular).
-        - Conception et réalisation de la plateforme d'intégration continue basée
-          sur Jenkins 2 (“pipelines as code”), SonarQube et GitHub.
-        - Mise en place de la chaîne “CI / CD” sur OpenShift.
-        - Organisation et animation de la vie d'équipe en tant que tech lead
-          (5 personnes).
+        - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 200 applications**.
+        - Conception de la plateforme d'intégration continue — Jenkins 2 en pipelines-as-code, **SonarQube**, GitHub — puis de la chaîne CD sur OpenShift : plusieurs centaines de pipelines en production.
+        - **Bootstrap d'un nouveau projet ramené de plusieurs jours (voire semaines) à immédiat** par industrialisation des socles et des pipelines.
+        - Tech lead d'une équipe de 5 personnes.
 
-    - header: "2006 - 2008"
-      title: "Ingénieur logiciel Java / JEE"
+    - header: "1999 - 2008"
+      title: "Ingénieur puis chef de projet technique Java / JEE"
       content: |
-        **Apside TOP**, Tours — Java · JEE · HTML · CSS
+        Prima Solutions (Paris), Delta Informatique (Tours), Apside (Tours) - Java - JEE - Weblogic
 
-        - Mise en place d'applications Web en tant qu'expert JEE en prestation chez
-          Coface Services et accompagnement du personnel interne dans sa montée en
-          compétences.
-        - Rôle de tech lead au sein des équipes.
-
-    - header: "2004 - 2006"
-      title: "Chef de projet technique"
-      content: |
-        **Delta Informatique**, Tours — Java · JEE · HTML · CSS
-
-        - Mise en place de sites web (secteur banque et assurances) en JEE (déployés
-          sur Weblogic) comme développeur expert puis chef de projets techniques
-          (spécifications techniques, développement et mise en place chez les
-          clients) sur les mêmes technologies.
-
-    - header: "2002 - 2004"
-      title: "Ingénieur Java / JEE"
-      content: |
-        **Prima Solutions**, Paris — Java · JEE · HTML · CSS
-
-        - Développement de front end et back end dans le secteur assurance et pour le
-          site assurland.com.
-        - Accompagnement clientèle pour le déploiement de solutions JEE / Weblogic.
-
-- title: Formation
-  items:
-    - header: "1999"
-      title: "Ingénieur en Informatique"
-      content: |
-        **Polytech Tours**
-
-        École d'ingénieur en informatique (développement).
-
-    - header: "1996"
-      title: "DUT Informatique"
-      content: |
-        **Université d'Orléans - Tours**
-
-        Diplôme d'informatique de gestion.
-
-    - header: "1993"
-      title: "BAC D"
-      content: |
-        **Lycée Claude de France à Romorantin**
-
-        Filière générale option biologie.
+        - Développement et conception d'applications web pour les secteurs banque et assurance.
+        - Rôle de tech lead et de chef de projet technique sur les dernières années.
 
 - title: Compétences & Aptitudes
   items:
-    - header: "Developer Relations"
-      title: "Prise de parole et création de contenu"
-      content: |
-        - Speaker
-        - Evangelisation
-        - Tech writer
+    - header: "Intelligence Artificielle"
+      title: "RAG, tool calling, MCP, agents, LangChain4j, Spring AI, écosystème ML/DL Java (DJL, Jlama)"
+    - header: "Java"
+      title: "Java, Quarkus, JBang, Picocli, Spring"
+    - header: "Cloud & plateforme"
+      title: "Docker, Kubernetes, OpenShift, Terraform/OpenTofu, Pulumi, CI/CD, Jenkins, SonarQube"
+    - header: "Advocacy"
+      title: " Prise de parole en conférence, écriture technique, animation de communauté, relation produit"
 
-    - header: "Cloud & Intelligence Artificielle"
-      title: "Plateformes cloud et AI/ML"
-      content: |
-        - AI (Machine Learning)
-        - Cloud
-
-    - header: "Développement & Architecture"
-      title: "Conception et développement logiciel"
-      content: |
-        - Java
-        - Python
-        - Architecture technique et logicielle
-
-    - header: "DevOps & Cloud Native"
-      title: "Industrialisation et déploiement"
-      content: |
-        - Docker
-        - Kubernetes
-        - Jenkins
-        - DevOps
-
-- title: Projets personnels
+- title: Formation
   items:
-    - header: "Meetup"
-      title: "TADx"
-      link: https://www.tadx.fr
-      content: |
-        Co-créateur d'un meetup à Tours. Ce meetup a pour objectif d'organiser un
-        évènement par mois autour des sujets divers et variés que l'on peut trouver
-        dans l'écosystème IT.
-
-    - header: "Blog"
-      title: "Blog personnel"
-      link: https://philippart-s.github.io/blog/
-      content: |
-        Blog personnel pour partager autour de sujets techniques.
-
-    - header: "Conférences"
-      title: "Conférences données"
-      link: https://noti.st/philippart-s
-      content: |
-        Slides et vidéos des conférences données.
+    - header: "Ingénieur en informatique, Polytech Tours."
+      title: ""
 
 - title: Contributions Open Source
   items:
@@ -153,7 +73,7 @@
       title: "LangChain4j"
       link: https://github.com/langchain4j/langchain4j/
       content: |
-        Repository permettant l'utilisation de LLM au sein d'applications Java.
+        Contributeur : intégration d'un provider LLM au framework.
 
 - title: Langues
   items:
@@ -165,12 +85,5 @@
 
 - title: Centres d'intérêts
   items:
-    - header: "Communauté"
-      title: "Co-créateur du meetup TADx"
-      link: https://www.tadx.fr
-
-    - header: "Sport"
-      title: "Running"
-
-    - header: "Loisirs"
-      title: "Cuisine"
+    - header: "Course à pied · Cuisine"
+      title: ""
