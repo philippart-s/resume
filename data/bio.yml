@@ -154,3 +154,11 @@
       link: https://github.com/langchain4j/langchain4j/
       content: |
         Repository permettant l'utilisation de LLM au sein d'applications Java.
+
+- title: Langues
+  items:
+    - header: "Français"
+      title: "Natif"
+
+    - header: "Anglais"
+      title: "Professionnel"
