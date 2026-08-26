@@ -7,9 +7,10 @@ country: France
 email: s.philippart@gmail.com
 site: https://philippart-s.github.io/blog/
 bio: |
-  Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques par des développeurs. 
-  Pendant 14 ans en interne, comme architecte et platform engineer, socles Java et chaîne CI/CD utilisés par 250 développeurs sur plus de 200 applications. 
-  Depuis 2022 en public, comme Developer Advocate : 77 talks en conférence, plus de 100 articles techniques, 70 meetups organisés.
-  
-  Je travaille aujourd'hui à l'intersection de la JVM et de l'IA appliquée : RAG, tool calling, MCP, agents.
-  Un croisement encore peu couvert dans un écosystème majoritairement Python.
+  Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques
+  par des développeurs — 14 ans en interne comme architecte et platform engineer,
+  puis en public depuis 2022 comme Developer Advocate.
+
+  Je travaille aujourd'hui à l'intersection de la JVM et de l'IA appliquée : RAG,
+  tool calling, MCP, agents. Un croisement encore peu couvert dans un écosystème
+  majoritairement Python.
