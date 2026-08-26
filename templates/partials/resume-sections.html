@@ -1,0 +1,10 @@
+{#for section in cdi:bio.list}
+{#if mainTitles.contains(section.title)}
+{#resumeSection title=section.title}
+  {#for item in section.items}
+  {#resumeItem site=site item=item nested=false}
+  {/resumeItem}
+  {/for}
+{/resumeSection}
+{/if}
+{/for}

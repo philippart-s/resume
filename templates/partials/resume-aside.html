@@ -1,0 +1,28 @@
+{#for section in cdi:bio.list}
+{#if !mainTitles.contains(section.title)}
+<section>
+  <h3 class="mb-4 border-b-2 border-section-border pb-2 text-sm font-semibold tracking-wide text-heading uppercase dark:border-section-border-dark dark:text-heading-dark">
+    {=section.title}
+  </h3>
+  <ul class="space-y-4">
+    {#for item in section.items}
+    <li>
+      <p class="text-sm font-semibold text-date-range dark:text-date-range-dark">{=item.header}</p>
+      {#if item.title}
+      <p class="text-sm font-medium text-heading dark:text-heading-dark">
+        {#if item.link}
+        <a class="underline hover:text-link-hover dark:hover:text-link-hover-dark" href="{=item.link}" target="_blank" rel="noopener noreferrer">{=item.title}</a>
+        {#else}
+        {=item.title}
+        {/if}
+      </p>
+      {/if}
+      {#if item.content}
+      <div class="markdown mt-1 text-xs leading-relaxed text-muted dark:text-muted-dark">{=item.content.markdownify}</div>
+      {/if}
+    </li>
+    {/for}
+  </ul>
+</section>
+{/if}
+{/for}
