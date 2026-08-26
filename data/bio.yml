@@ -111,3 +111,25 @@
         - Kubernetes
         - Jenkins
         - DevOps
+
+- title: Projets personnels
+  items:
+    - header: "Meetup"
+      title: "TADx"
+      link: https://www.tadx.fr
+      content: |
+        Co-créateur d'un meetup à Tours. Ce meetup a pour objectif d'organiser un
+        évènement par mois autour des sujets divers et variés que l'on peut trouver
+        dans l'écosystème IT.
+
+    - header: "Blog"
+      title: "Blog personnel"
+      link: https://philippart-s.github.io/blog/
+      content: |
+        Blog personnel pour partager autour de sujets techniques.
+
+    - header: "Conférences"
+      title: "Conférences données"
+      link: https://noti.st/philippart-s
+      content: |
+        Slides et vidéos des conférences données.
