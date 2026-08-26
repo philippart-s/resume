@@ -9,7 +9,7 @@
   /* Tous les utilitaires d'espacement Tailwind dérivent de --spacing (0.25rem par
      défaut) : le réduire ici compacte marges, paddings et gaps d'un seul geste. */
   :root {
-    --spacing: 0.18rem;
+    --spacing: 0.22rem;
   }
 
   html,
