@@ -162,3 +162,15 @@
 
     - header: "Anglais"
       title: "Professionnel"
+
+- title: Centres d'intérêts
+  items:
+    - header: "Communauté"
+      title: "Co-créateur du meetup TADx"
+      link: https://www.tadx.fr
+
+    - header: "Sport"
+      title: "Running"
+
+    - header: "Loisirs"
+      title: "Cuisine"
