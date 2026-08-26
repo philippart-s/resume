@@ -1,4 +1,31 @@
 - name: LinkedIn
-  url: https://www.linkedin.com/
+  type: philippartstephane
+  url: https://www.linkedin.com/in/philippartstephane
+
 - name: GitHub
-  url: https://github.com/
+  type: "@philippart-s"
+  url: https://github.com/philippart-s
+
+- name: GitLab
+  type: "@philippart-s"
+  url: https://gitlab.com/philippart-s
+
+- name: Twitter
+  type: "@wildagsx"
+  url: https://x.com/wildagsx
+
+- name: Stack Overflow
+  type: wilda
+  url: https://stackoverflow.com/users/2471248/wilda
+
+- name: Noti.st
+  type: Slides et vidéos des conférences
+  url: https://noti.st/philippart-s
+
+- name: Podcast
+  type: Tranches de Tech
+  url: https://podcast.ausha.co/tranches-de-tech
+
+- name: Twitch
+  type: Replays des lives
+  url: https://bit.ly/twitch-replays
