@@ -1,31 +1,37 @@
 {#for section in cdi:bio.list}
 {#if mainTitles.contains(section.title)}
-{#resumeSection title=section.title}
-  {#for item in section.items}
-  <li class="relative break-inside-avoid before:absolute before:top-6 before:-left-[1.875rem] before:block before:size-4 before:rounded-full before:border-2 before:border-timeline-dot-border/75 before:bg-main before:content-[''] dark:before:border-timeline-dot-border-dark/75 dark:before:bg-main-dark">
-    {#if item.logo}
-    <a href="{=item.logo.link}" target="_blank" rel="noopener noreferrer">
-      <img src="{=site.image(item.logo.imageUrl)}" alt="{=item.logo.label}" class="m-2 h-15" />
-    </a>
-    {/if}
+<section class="resume-section">
+  <div class="mb-8 border-b-4 border-section-border py-2.5 dark:border-section-border-dark">
+    <h3 class="text-xl font-medium text-heading dark:text-heading-dark">{=section.title}</h3>
+  </div>
 
-    <h4 class="text-sm font-semibold text-date-range dark:text-date-range-dark">{=item.header}</h4>
-
-    {#if item.title}
-    <h5 class="mb-2 font-bold text-heading dark:text-heading-dark">
-      {#if item.link}
-      <a class="underline hover:text-link-hover dark:hover:text-link-hover-dark" href="{=item.link}" target="_blank" rel="noopener noreferrer">{=item.title}</a>
-      {#else}
-      {=item.title}
+  <ul class="resume-timeline relative space-y-6 pl-6 before:absolute before:top-0 before:bottom-0 before:left-0 before:block before:w-1 before:rounded-full before:bg-timeline-bar before:content-[''] dark:before:bg-timeline-bar-dark">
+    {#for item in section.items}
+    <li class="resume-item relative break-inside-avoid before:absolute before:top-6 before:-left-[1.875rem] before:block before:size-4 before:rounded-full before:border-2 before:border-timeline-dot-border/75 before:bg-main before:content-[''] dark:before:border-timeline-dot-border-dark/75 dark:before:bg-main-dark">
+      {#if item.logo}
+      <a href="{=item.logo.link}" target="_blank" rel="noopener noreferrer">
+        <img src="{=site.image(item.logo.imageUrl)}" alt="{=item.logo.label}" class="m-2 h-15" />
+      </a>
       {/if}
-    </h5>
-    {/if}
 
-    {#if item.content}
-    <div class="markdown text-sm/relaxed text-muted dark:text-muted-dark">{=item.content.markdownify}</div>
-    {/if}
-  </li>
-  {/for}
-{/resumeSection}
+      <h4 class="text-sm font-semibold text-date-range dark:text-date-range-dark">{=item.header}</h4>
+
+      {#if item.title}
+      <h5 class="mb-2 font-bold text-heading dark:text-heading-dark">
+        {#if item.link}
+        <a class="underline hover:text-link-hover dark:hover:text-link-hover-dark" href="{=item.link}" target="_blank" rel="noopener noreferrer">{=item.title}</a>
+        {#else}
+        {=item.title}
+        {/if}
+      </h5>
+      {/if}
+
+      {#if item.content}
+      <div class="markdown text-sm/relaxed text-muted dark:text-muted-dark">{=item.content.markdownify}</div>
+      {/if}
+    </li>
+    {/for}
+  </ul>
+</section>
 {/if}
 {/for}

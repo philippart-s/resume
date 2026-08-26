@@ -1,0 +1,155 @@
+/* Feuille d'impression : le CV doit tenir sur 2 pages A4 lisibles en noir et blanc. */
+@media print {
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  /* Tous les utilitaires d'espacement Tailwind dérivent de --spacing (0.25rem par
+     défaut) : le réduire ici compacte marges, paddings et gaps d'un seul geste. */
+  :root {
+    --spacing: 0.18rem;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+
+  /* Éléments d'écran sans objet sur papier */
+  .resume-toggle,
+  .resume-photo,
+  .resume-footer,
+  .resume-figure-detail {
+    display: none !important;
+  }
+
+  /* Deux colonnes conservées, mais en flottant et non en grille : une grille
+     d'une seule rangée est repoussée en entier quand elle ne tient pas dans la
+     place restante, ce qui laissait une page blanche sous le bandeau. Un
+     flottant, lui, se fragmente : le texte s'écoule à côté du rail puis reprend
+     toute la largeur en dessous. */
+  .resume-grid {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .resume-aside {
+    float: right;
+    width: 32%;
+    margin: 0 0 0.8rem 1rem !important;
+  }
+
+  .resume-main {
+    width: auto !important;
+  }
+
+  /* Aplatir les fonds et bordures colorés */
+  .resume-page,
+  .resume-header,
+  .resume-figures,
+  .resume-figures > * {
+    background: #fff !important;
+    border-color: #999 !important;
+  }
+
+  .resume-header {
+    padding: 0 !important;
+  }
+
+  .resume-header h1 {
+    font-size: 17pt;
+  }
+
+  .resume-header h1 + p {
+    font-size: 10pt;
+  }
+
+  .resume-contact {
+    font-size: 8.5pt;
+  }
+
+  /* Les chiffres clés sur une seule ligne, entre deux filets */
+  .resume-figures {
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: 0 1rem;
+    border-top: 1px solid #999 !important;
+    border-bottom: 1px solid #999 !important;
+    padding: 0.3rem 0 !important;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .resume-figures > * {
+    padding: 0 !important;
+  }
+
+  .resume-figures dt {
+    font-size: 11pt;
+  }
+
+  .resume-figures dd {
+    font-size: 8pt;
+  }
+
+  /* Une section peut être coupée entre deux pages (sinon une longue section
+     est repoussée en entier), mais jamais un item au milieu. */
+  .resume-section {
+    break-inside: auto;
+  }
+
+  .resume-item,
+  .resume-aside li {
+    break-inside: avoid;
+  }
+
+  h3,
+  h4,
+  h5 {
+    break-after: avoid;
+    color: #000 !important;
+  }
+
+  .resume-section h3 {
+    font-size: 10.5pt;
+  }
+
+  .resume-lead {
+    font-size: 9.5pt;
+  }
+
+  .markdown p,
+  .markdown ul,
+  .markdown ol {
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Décor de timeline : invisible à l'impression, on récupère la largeur */
+  .resume-timeline {
+    padding-left: 0 !important;
+  }
+
+  .resume-timeline::before,
+  .resume-item::before {
+    display: none !important;
+  }
+
+  /* Les liens ne sont pas cliquables sur papier : on expose l'URL,
+     sauf dans le bandeau où le texte du lien est déjà l'URL. */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .resume-main a[href^="http"]::after,
+  .resume-aside a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #444;
+    word-break: break-all;
+  }
+}
