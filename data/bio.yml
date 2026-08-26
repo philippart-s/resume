@@ -58,3 +58,26 @@
         - Développement de front end et back end dans le secteur assurance et pour le
           site assurland.com.
         - Accompagnement clientèle pour le déploiement de solutions JEE / Weblogic.
+
+- title: Formation
+  items:
+    - header: "1999"
+      title: "Ingénieur en Informatique"
+      content: |
+        **Polytech Tours**
+
+        École d'ingénieur en informatique (développement).
+
+    - header: "1996"
+      title: "DUT Informatique"
+      content: |
+        **Université d'Orléans - Tours**
+
+        Diplôme d'informatique de gestion.
+
+    - header: "1993"
+      title: "BAC D"
+      content: |
+        **Lycée Claude de France à Romorantin**
+
+        Filière générale option biologie.
