@@ -2,8 +2,29 @@
 {#if mainTitles.contains(section.title)}
 {#resumeSection title=section.title}
   {#for item in section.items}
-  {#resumeItem site=site item=item nested=false}
-  {/resumeItem}
+  <li class="relative break-inside-avoid before:absolute before:top-6 before:-left-[1.875rem] before:block before:size-4 before:rounded-full before:border-2 before:border-timeline-dot-border/75 before:bg-main before:content-[''] dark:before:border-timeline-dot-border-dark/75 dark:before:bg-main-dark">
+    {#if item.logo}
+    <a href="{=item.logo.link}" target="_blank" rel="noopener noreferrer">
+      <img src="{=site.image(item.logo.imageUrl)}" alt="{=item.logo.label}" class="m-2 h-15" />
+    </a>
+    {/if}
+
+    <h4 class="text-sm font-semibold text-date-range dark:text-date-range-dark">{=item.header}</h4>
+
+    {#if item.title}
+    <h5 class="mb-2 font-bold text-heading dark:text-heading-dark">
+      {#if item.link}
+      <a class="underline hover:text-link-hover dark:hover:text-link-hover-dark" href="{=item.link}" target="_blank" rel="noopener noreferrer">{=item.title}</a>
+      {#else}
+      {=item.title}
+      {/if}
+    </h5>
+    {/if}
+
+    {#if item.content}
+    <div class="markdown text-sm/relaxed text-muted dark:text-muted-dark">{=item.content.markdownify}</div>
+    {/if}
+  </li>
   {/for}
 {/resumeSection}
 {/if}
