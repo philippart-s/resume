@@ -133,3 +133,24 @@
       link: https://noti.st/philippart-s
       content: |
         Slides et vidéos des conférences données.
+
+- title: Contributions Open Source
+  items:
+    - header: "Jenkins"
+      title: "Jenkins conventional commits plugin"
+      link: https://github.com/jenkinsci/conventional-commits-plugin/
+      content: |
+        Plugin Jenkins permettant le calcul automatique des versions en fonction des
+        messages de commit.
+
+    - header: "Communauté"
+      title: "Developers Conferences Agenda/List"
+      link: https://github.com/scraly/developers-conferences-agenda
+      content: |
+        Repository de centralisation des dates de conférences et CFP.
+
+    - header: "Java & IA"
+      title: "LangChain4j"
+      link: https://github.com/langchain4j/langchain4j/
+      content: |
+        Repository permettant l'utilisation de LLM au sein d'applications Java.
