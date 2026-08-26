@@ -81,3 +81,33 @@
         **Lycée Claude de France à Romorantin**
 
         Filière générale option biologie.
+
+- title: Compétences & Aptitudes
+  items:
+    - header: "Developer Relations"
+      title: "Prise de parole et création de contenu"
+      content: |
+        - Speaker
+        - Evangelisation
+        - Tech writer
+
+    - header: "Cloud & Intelligence Artificielle"
+      title: "Plateformes cloud et AI/ML"
+      content: |
+        - AI (Machine Learning)
+        - Cloud
+
+    - header: "Développement & Architecture"
+      title: "Conception et développement logiciel"
+      content: |
+        - Java
+        - Python
+        - Architecture technique et logicielle
+
+    - header: "DevOps & Cloud Native"
+      title: "Industrialisation et déploiement"
+      content: |
+        - Docker
+        - Kubernetes
+        - Jenkins
+        - DevOps
