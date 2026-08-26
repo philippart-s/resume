@@ -36,6 +36,9 @@
   .resume-grid {
     display: block !important;
     padding: 0 !important;
+    /* Respiration entre le bandeau et le début des deux colonnes : la marge est
+       portée par la grille pour pousser aussi le rail, qui flotte en haut. */
+    margin-top: 0.9rem;
   }
 
   .resume-aside {
