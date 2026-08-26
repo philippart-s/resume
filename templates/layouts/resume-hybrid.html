@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+{@io.quarkiverse.roq.frontmatter.runtime.model.NormalPage page}
+
+<div
+  x-data="{
+        darkMode: false,
+        toggleDarkMode() {
+          this.darkMode = ! this.darkMode;
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+  class="min-h-dvh min-w-[320px] bg-main text-body dark:bg-main-dark dark:text-body-dark"
+>
+  {#include partials/roq-resume/toggle-darkmode /}
+
+  <div class="container mx-auto max-w-6xl">
+    {#include partials/resume-header /}
+
+    <div class="space-y-16 p-5 md:p-10">
+      {#include partials/roq-resume/bio /}
+      {#include partials/roq-resume/social /}
+      {#include partials/roq-resume/footer /}
+    </div>
+  </div>
+</div>
