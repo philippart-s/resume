@@ -118,6 +118,13 @@
     font-size: 10.5pt;
   }
 
+  /* Le filet sous un titre de section est une bordure de bloc : sans contexte de
+     formatage de bloc, elle garde toute la largeur du conteneur et passe sous le
+     rail flottant. flow-root la fait s'arrêter au bord du flottant. */
+  .resume-section-title {
+    display: flow-root;
+  }
+
   .resume-lead {
     font-size: 9.5pt;
   }
