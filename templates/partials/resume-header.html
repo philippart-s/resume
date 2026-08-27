@@ -30,12 +30,14 @@
         <span>{=profile.city}, {=profile.country}</span>
       </li>
       {/if}
-      {#if page.data.availability}
+      {#let availability = page.data.getString('availability')}
+      {#if availability}
       <li class="inline-flex items-center gap-1.5">
         {#include partials/resume-icon name="Disponibilité" /}
-        <span>{=page.data.availability}</span>
+        <span>{=availability}</span>
       </li>
       {/if}
+      {/let}
       {#if profile.email}
       <li>
         <a class="inline-flex items-center gap-1.5 underline hover:text-body dark:hover:text-body-dark" href="mailto:{=profile.email}">
@@ -60,9 +62,10 @@
      The printSocial frontmatter narrows the list on paper; without that key,
      everything is printed. !}
   {#if cdi:social}
-  <ul class="resume-social {#if page.data.printSocial}resume-social-filtered{/if} flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-xs text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
+  {#let printSocial = page.data.getJsonArray('printSocial')}
+  <ul class="resume-social {#if printSocial}resume-social-filtered{/if} flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-xs text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
     {#for item in cdi:social.items}
-    <li class="{#if page.data.printSocial && page.data.printSocial.contains(item.name)}resume-print-keep{/if}">
+    <li class="{#if printSocial && printSocial.contains(item.name)}resume-print-keep{/if}">
       <a class="inline-flex items-center gap-1.5 hover:text-body dark:hover:text-body-dark"
          href="{=item.url}" target="_blank" rel="noopener noreferrer" title="{=item.name}">
         {#include partials/resume-icon name=item.name /}
@@ -71,9 +74,10 @@
     </li>
     {/for}
   </ul>
+  {/let}
   {/if}
 
-  {#if cdi:highlights}
+  {#if cdi:highlights.list}
   <dl class="resume-figures grid grid-cols-2 gap-px border-t border-section-border bg-section-border sm:grid-cols-3 lg:grid-cols-5 dark:border-section-border-dark dark:bg-section-border-dark">
     {#for highlight in cdi:highlights.list}
     <div class="bg-main px-5 py-4 dark:bg-main-dark">

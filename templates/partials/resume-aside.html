@@ -1,5 +1,5 @@
 {#for section in cdi:bio.list}
-{#if !mainTitles.contains(section.title)}
+{#if mainTitles && !mainTitles.contains(section.title)}
 <section class="resume-section">
   <h3 class="mb-4 border-b-2 border-section-border pb-2 text-sm font-semibold tracking-wide text-heading uppercase dark:border-section-border-dark dark:text-heading-dark">
     {=section.title}
