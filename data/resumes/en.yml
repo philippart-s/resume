@@ -10,7 +10,7 @@ profile:
   email: s.philippart@gmail.com
   site: https://philippart-s.github.io/blog/
   bio: |
-    For 24 years my job has been the same: getting developers to adopt technical
+    For 27 years my job has been the same: getting developers to adopt technical
     platforms — 14 years in house as an architect and platform engineer, then in
     public since 2022 as a Developer Advocate.
 
@@ -21,7 +21,7 @@ profile:
 availability: Remote / travel across France & Europe
 
 highlights:
-  - value: "24 years"
+  - value: "27 years"
     label: "of experience"
     detail: "development, architecture, platform engineering, advocacy"
 

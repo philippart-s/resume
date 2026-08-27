@@ -11,7 +11,7 @@ profile:
   email: s.philippart@gmail.com
   site: https://philippart-s.github.io/blog/
   bio: |
-    Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques
+    Depuis 27 ans, mon métier est le même : faire adopter des plateformes techniques
     par des développeurs : 14 ans en interne comme architecte et platform engineer,
     puis en public depuis 2022 comme Developer Advocate.
 
@@ -21,7 +21,7 @@ profile:
 availability: Remote / déplacements France & Europe
 
 highlights:
-  - value: "24 ans"
+  - value: "27 ans"
     label: "d'expérience"
     detail: "développement, architecture, platform engineering, advocacy"
 
