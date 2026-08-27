@@ -26,7 +26,7 @@ highlights:
 
   - value: "77"
     label: "talks en conférence"
-    detail: "en 4 ans, circuit européen Java & AI / cloud"
+    detail: "en 4 ans, circuit européen Java & IA / cloud"
 
   - value: "100+"
     label: "articles techniques"
@@ -52,7 +52,7 @@ sections:
           - Lead d'une équipe DevRel de 3 personnes pendant 2 ans : encadrement, stratégie d'équipe, budget annuel, onboarding d'un nouvel entrant.
           - **77 talks** en 4 ans (~19/an) dans plus de 30 conférences (Devoxx France, UK, Belgique, Voxxed Days Zurich, DevFest Nantes). Audience maximale : 500 personnes. 
           - Plus de **100 articles techniques** : blog personnel, guides officiels produit, magazine Programmez. Publications atteignant régulièrement ~1 000 interactions professionnelles.
-          - Intégration et référencement des produits IA OVHcloud dans les principaux outils et frameworks de l'écosystème, dont Docker Model Runner et LangChain4j : relation directe avec les équipes de ces produits, tests des versions préliminaires, remontée de bugs, tutoriels avec code
+          - Intégration et référencement des produits IA OVHcloud dans les principaux outils et frameworks de l'écosystème, dont Docker Model Runner et LangChain4j : relation directe avec les équipes de ces produits, tests des versions préliminaires, remontée de bugs, tutoriels avec code.
           - Premier utilisateur interne des produits IA avant mise sur le marché : détection et remontée aux PM/PO des défauts d'API avant exposition publique.
           - Développement de POC et démos servant de support aux talks et à la documentation officielle.
 
@@ -67,7 +67,7 @@ sections:
       - header: "Harmonie Mutuelle, 2008 → 2022"
         title: "Tech Lead / Architecte logiciel & Platform Engineer"
         content: |
-          **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+          **Harmonie-Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
           - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeuses / développeurs sur plus de 100 applications**.
           - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
@@ -91,7 +91,7 @@ sections:
       - header: "Cloud & plateforme"
         title: "Docker, Kubernetes, OpenShift, Terraform/OpenTofu, Pulumi, CI/CD, Jenkins, SonarQube"
       - header: "Advocacy"
-        title: " Prise de parole en conférence, écriture technique, animation de communauté, relation produit"
+        title: "Prise de parole en conférence, écriture technique, animation de communauté, relation produit"
 
   - title: Formation
     items:
@@ -127,7 +127,7 @@ sections:
       - header: "Anglais"
         title: "Professionnel"
 
-  - title: Centres d'intérêts
+  - title: Centres d'intérêt
     items:
       - header: "Course à pied · Cuisine"
         title: ""
