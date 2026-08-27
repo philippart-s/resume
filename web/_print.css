@@ -200,6 +200,11 @@
     margin-bottom: 0.2rem !important;
   }
 
+  /* No token may overrun its column, whatever its length. */
+  .markdown {
+    overflow-wrap: break-word;
+  }
+
   /* Timeline decoration: hidden on paper, the width is reclaimed */
   .resume-timeline {
     padding-left: 0 !important;
