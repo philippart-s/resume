@@ -212,6 +212,10 @@
     content: " (" attr(href) ")";
     font-size: 0.75em;
     color: #444;
-    word-break: break-all;
+    /* anywhere, not break-all: a long URL only breaks when the line cannot
+       hold it, instead of being cut mid-word every time. */
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: none;
   }
 }
