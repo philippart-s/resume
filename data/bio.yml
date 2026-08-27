@@ -6,19 +6,19 @@
         OVHcloud (Paris, remote) _IA · Cloud native · Java · Python · Docker · Kubernetes_
 
         - Lead d'une équipe DevRel de 3 personnes pendant 2 ans : encadrement, stratégie d'équipe, budget annuel, onboarding d'un nouvel entrant.
-        - **77 talks** en 4 ans (~19/an) sur le circuit européen Java et cloud — Devoxx France, UK, Belgique, Voxxed Days Zurich, Confoo. Audience maximale : 500 personnes. **Un talk sur les CLI IA sélectionné plus de 20 fois par des comités de programme.**
+        - **77 talks** en 4 ans (~19/an) : Devoxx France, UK, Belgique, Voxxed Days Zurich, Confoo, ... Audience maximale : 500 personnes. **Un talk sur les CLI IA sélectionné plus de 20 fois par des comités de programme.**
         - Plus de **100 articles techniques** : blog personnel, guides officiels produit, magazine Programmez. Publications atteignant régulièrement ~1 000 interactions professionnelles.
-        - **Intégration des produits IA OVHcloud à Docker Model Runner** et correction d'endpoints IA inexploitables dans plusieurs frameworks open source — remontée directe des défauts en amont produit.
+        - **Intégration des produits IA OVHcloud à de nombreux outils et frameworks** (Docker Model Runner, LangChain4j, ...).
         - Premier utilisateur interne des produits IA avant mise sur le marché : détection et remontée aux PM/PO des défauts d'API avant exposition publique.
         - Développement de POC et démos servant de support aux talks et à la documentation officielle.
 
     - header: "Communauté & production publique"
       title: ""
       content:  |
-        - **[TADx](https://www.tadx.fr/)** — Co-fondateur du meetup tech de Tours. **70 éditions en 7 ans**, 20 à 30 participants par édition.
-        - **Tranches de Tech** — Co-animateur du podcast technique mensuel. 30 épisodes.
-        - **Blog technique** — https://philippart-s.github.io/blog
-        - **Talks** — https://philippart-s.github.io/blog/conferences/
+        - **[TADx](https://www.tadx.fr/)** : Co-fondateur du meetup tech de Tours. **70 éditions en 7 ans**, 20 à 30 participants par édition.
+        - **Tranches de Tech** : Co-animateur du podcast technique mensuel. 30 épisodes.
+        - **Blog technique** : https://philippart-s.github.io/blog
+        - **Talks** : https://philippart-s.github.io/blog/conferences/
 
     - header: "Harmonie Mutuelle, 2008 → 2022"
       title: "Tech Lead / Architecte logiciel & Platform Engineer"
@@ -26,8 +26,8 @@
         **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
         - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 200 applications**.
-        - Conception de la plateforme d'intégration continue — Jenkins 2 en pipelines-as-code, **SonarQube**, GitHub — puis de la chaîne CD sur OpenShift : plusieurs centaines de pipelines en production.
-        - **Bootstrap d'un nouveau projet ramené de plusieurs jours (voire semaines) à immédiat** par industrialisation des socles et des pipelines.
+        - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
+        - Mise en place d'une platforme engineering pour 250 développeuses / développeurs par industrialisation des socles et des pipelines.
         - Tech lead d'une équipe de 5 personnes.
 
     - header: "1999 - 2008"
@@ -41,9 +41,9 @@
 - title: Compétences & Aptitudes
   items:
     - header: "Intelligence Artificielle"
-      title: "RAG, tool calling, MCP, agents, LangChain4j, Spring AI, écosystème ML/DL Java (DJL, Jlama)"
+      title: "RAG, tool calling, MCP, agents, fine tuning, écosystème ML/DL Java"
     - header: "Java"
-      title: "Java, Quarkus, JBang, Picocli, Spring"
+      title: "Java, Quarkus, JBang, Picocli, Spring, LangChain4j"
     - header: "Cloud & plateforme"
       title: "Docker, Kubernetes, OpenShift, Terraform/OpenTofu, Pulumi, CI/CD, Jenkins, SonarQube"
     - header: "Advocacy"

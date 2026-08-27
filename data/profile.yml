@@ -1,16 +1,15 @@
 firstName: Stéphane
 lastName: Philippart
 picture: stephane_philippart.jpg
-jobTitle: Senior Developer Advocate — Java & IA / Cloud Native
+jobTitle: Senior Developer Advocate - IA / Cloud Native
 city: Tours
 country: France
 email: s.philippart@gmail.com
 site: https://philippart-s.github.io/blog/
 bio: |
   Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques
-  par des développeurs — 14 ans en interne comme architecte et platform engineer,
+  par des développeurs : 14 ans en interne comme architecte et platform engineer,
   puis en public depuis 2022 comme Developer Advocate.
 
-  Je travaille aujourd'hui à l'intersection de la JVM et de l'IA appliquée : RAG,
-  tool calling, MCP, agents. Un croisement encore peu couvert dans un écosystème
-  majoritairement Python.
+  Aujourd'hui je travaille sur l'IA pour les développeuses et développeurs (RAG, tool calling, MCP, agents) et sur le cloud native. 
+  Java reste mon langage d'expertise, Python fait partie de mon quotidien côté IA.
