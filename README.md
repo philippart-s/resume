@@ -195,6 +195,12 @@ The design tokens in `web/_resume-theme.css`, `resume.js` and three partials com
 from `quarkus-roq-theme-resume` (Apache-2.0), kept in the project when the theme
 dependency was dropped in favour of owning the data model.
 
+## Maintaining the project
+
+[ARCHITECTURE.md](ARCHITECTURE.md) covers the architecture decisions, the rendering
+pipeline, the print strategy and the traps met along the way. [CLAUDE.md](CLAUDE.md)
+holds the working conventions, for AI coding assistants and humans alike.
+
 ## Learn more
 
 - [Roq documentation](https://iamroq.dev/docs/) — content, layouts, data, plugins
