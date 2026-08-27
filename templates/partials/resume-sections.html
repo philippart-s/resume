@@ -1,5 +1,4 @@
-{#for section in cdi:bio.list}
-{#if !mainTitles || mainTitles.contains(section.title)}
+{#for section in sections}
 <section class="resume-section">
   <div class="resume-section-title mb-8 border-b-4 border-section-border py-2.5 dark:border-section-border-dark">
     <h3 class="text-xl font-medium text-heading dark:text-heading-dark">{=section.title}</h3>
@@ -33,5 +32,4 @@
     {/for}
   </ul>
 </section>
-{/if}
 {/for}

@@ -14,6 +14,7 @@
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.version>3.39.1</quarkus.platform.version>
+        <quarkus-web-bundler.version>2.3.3</quarkus-web-bundler.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.6</surefire-plugin.version>
     </properties>
@@ -33,13 +34,29 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkiverse.roq</groupId>
-            <artifactId>quarkus-roq-theme-resume</artifactId>
-            <version>2.1.7</version>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkiverse.roq</groupId>
             <artifactId>quarkus-roq</artifactId>
             <version>2.1.7</version>
+        </dependency>
+        <!-- Was pulled in by the resume theme: brings the tailwindcss npm package
+             used by web/resume-theme.css -->
+        <dependency>
+            <groupId>io.quarkiverse.web-bundler</groupId>
+            <artifactId>quarkus-web-bundler-tailwindcss</artifactId>
+            <version>${quarkus-web-bundler.version}</version>
+        </dependency>
+        <!-- npm packages imported by web/resume.js, installed into node_modules
+             by the web bundler -->
+        <dependency>
+            <groupId>org.mvnpm</groupId>
+            <artifactId>alpinejs</artifactId>
+            <version>3.16.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mvnpm.at.fontsource</groupId>
+            <artifactId>inter</artifactId>
+            <version>5.3.0</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>

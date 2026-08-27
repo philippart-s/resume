@@ -1,0 +1,156 @@
+# French resume. One file per variant in this directory, selected by the `resume`
+# key of a page's frontmatter.
+
+profile:
+  firstName: Stéphane
+  lastName: Philippart
+  picture: stephane_philippart.jpg
+  jobTitle: Senior Developer Advocate - IA / Cloud Native
+  city: Tours
+  country: France
+  email: s.philippart@gmail.com
+  site: https://philippart-s.github.io/blog/
+  bio: |
+    Depuis 24 ans, mon métier est le même : faire adopter des plateformes techniques
+    par des développeurs : 14 ans en interne comme architecte et platform engineer,
+    puis en public depuis 2022 comme Developer Advocate.
+
+    Aujourd'hui je travaille sur l'IA pour les développeuses et développeurs (RAG, tool calling, MCP, agents) et sur le cloud native. 
+    Java reste mon langage d'expertise, Python fait partie de mon quotidien côté IA.
+
+availability: Remote / déplacements France & Europe
+
+highlights:
+  - value: "24 ans"
+    label: "d'expérience"
+    detail: "développement, architecture, platform engineering, advocacy"
+
+  - value: "77"
+    label: "talks en conférence"
+    detail: "en 4 ans, circuit européen Java & AI / cloud"
+
+  - value: "100+"
+    label: "articles techniques"
+    detail: "blog, guides produit, presse spécialisée"
+
+  - value: "250+"
+    label: "platform engineering  utilisatrices / utilisateurs"
+    detail: "socles et CI/CD sur plus de 100 applications"
+
+  - value: "70"
+    label: "meetups organisés"
+    detail: "TADx, 7 ans"
+
+sections:
+  - title: Expériences professionnelles
+    main: true
+    items:
+      - header: "OVHcloud, 2022 → aujourd'hui"
+        title: "Senior Developer Advocate & Team Lead"
+        content: |
+          OVHcloud (Paris, remote) _IA · Cloud native · Java · Python · Docker · Kubernetes_
+
+          - Lead d'une équipe DevRel de 3 personnes pendant 2 ans : encadrement, stratégie d'équipe, budget annuel, onboarding d'un nouvel entrant.
+          - **77 talks** en 4 ans (~19/an) : Devoxx France, UK, Belgique, Voxxed Days Zurich, Confoo, ... Audience maximale : 500 personnes. **Un talk sur les CLI IA sélectionné plus de 20 fois par des comités de programme.**
+          - Plus de **100 articles techniques** : blog personnel, guides officiels produit, magazine Programmez. Publications atteignant régulièrement ~1 000 interactions professionnelles.
+          - **Intégration des produits IA OVHcloud à de nombreux outils et frameworks** (Docker Model Runner, LangChain4j, ...).
+          - Premier utilisateur interne des produits IA avant mise sur le marché : détection et remontée aux PM/PO des défauts d'API avant exposition publique.
+          - Développement de POC et démos servant de support aux talks et à la documentation officielle.
+
+      - header: "Communauté & production publique"
+        title: ""
+        content:  |
+          - **[TADx](https://www.tadx.fr/)** : Co-fondateur du meetup tech de Tours. **70 éditions en 7 ans**, 20 à 30 participants par édition.
+          - **Tranches de Tech** : Co-animateur du podcast technique mensuel. 30 épisodes.
+          - **Blog technique** : https://philippart-s.github.io/blog
+          - **Talks** : https://philippart-s.github.io/blog/conferences/
+
+      - header: "Harmonie Mutuelle, 2008 → 2022"
+        title: "Tech Lead / Architecte logiciel & Platform Engineer"
+        content: |
+          **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+
+          - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 200 applications**.
+          - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
+          - Mise en place d'une platforme engineering pour 250 développeuses / développeurs par industrialisation des socles et des pipelines.
+          - Tech lead d'une équipe de 5 personnes.
+
+      - header: "1999 - 2008"
+        title: "Ingénieur puis chef de projet technique Java / JEE"
+        content: |
+          Prima Solutions (Paris), Delta Informatique (Tours), Apside (Tours) - Java - JEE - Weblogic
+
+          - Développement et conception d'applications web pour les secteurs banque et assurance.
+          - Rôle de tech lead et de chef de projet technique sur les dernières années.
+
+  - title: Compétences & Aptitudes
+    items:
+      - header: "Intelligence Artificielle"
+        title: "RAG, tool calling, MCP, agents, fine tuning, écosystème ML/DL Java"
+      - header: "Java"
+        title: "Java, Quarkus, JBang, Picocli, Spring, LangChain4j"
+      - header: "Cloud & plateforme"
+        title: "Docker, Kubernetes, OpenShift, Terraform/OpenTofu, Pulumi, CI/CD, Jenkins, SonarQube"
+      - header: "Advocacy"
+        title: " Prise de parole en conférence, écriture technique, animation de communauté, relation produit"
+
+  - title: Formation
+    items:
+      - header: "Ingénieur en informatique, Polytech Tours."
+        title: ""
+
+  - title: Contributions Open Source
+    items:
+      - header: "Jenkins"
+        title: "Jenkins conventional commits plugin"
+        link: https://github.com/jenkinsci/conventional-commits-plugin/
+        content: |
+          Plugin Jenkins permettant le calcul automatique des versions en fonction des
+          messages de commit.
+
+      - header: "Communauté"
+        title: "Developers Conferences Agenda/List"
+        link: https://github.com/scraly/developers-conferences-agenda
+        content: |
+          Repository de centralisation des dates de conférences et CFP.
+
+      - header: "Java & IA"
+        title: "LangChain4j"
+        link: https://github.com/langchain4j/langchain4j/
+        content: |
+          Contributeur : intégration d'un provider LLM au framework.
+
+  - title: Langues
+    items:
+      - header: "Français"
+        title: "Natif"
+
+      - header: "Anglais"
+        title: "Professionnel"
+
+  - title: Centres d'intérêts
+    items:
+      - header: "Course à pied · Cuisine"
+        title: ""
+
+social:
+  - name: LinkedIn
+    type: philippartstephane
+    url: https://www.linkedin.com/in/philippartstephane
+    print: true
+
+  - name: GitHub
+    type: "@philippart-s"
+    url: https://github.com/philippart-s
+
+  - name: GitLab
+    type: "@philippart-s"
+    url: https://gitlab.com/philippart-s
+
+  - name: X
+    type: "@wildagsx"
+    url: https://x.com/wildagsx
+
+  - name: Stack Overflow
+    type: wilda
+    url: https://stackoverflow.com/users/2471248/wilda

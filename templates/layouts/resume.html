@@ -1,9 +1,11 @@
 ---
-layout: base-fr
+layout: base
 ---
 
 {@io.quarkiverse.roq.frontmatter.runtime.model.NormalPage page}
 
+{! The variant to render comes from the page `resume` key, French by default. !}
+{#let content = cdi:resumes.get(page.data.getString('resume') ?: 'fr')}
 <div
   x-data="{
         darkMode: false,
@@ -21,31 +23,30 @@ layout: base-fr
   <div class="resume-toggle">{#include partials/resume-toggle-darkmode /}</div>
 
   <div class="resume-page container mx-auto max-w-6xl">
-    {#include partials/resume-header /}
+    {#include partials/resume-header content=content /}
 
-    {#let mainTitles = page.data.getJsonArray('mainSections')}
     <div class="resume-grid grid grid-cols-1 gap-10 p-5 md:grid-cols-12 md:gap-12 md:p-10">
 
+      {! The rail comes first in the DOM so it can be floated in print; the visual
+         order is restored by order on mobile and col-start on wide screens. !}
       <aside class="resume-aside order-2 space-y-10 md:order-none md:col-span-4 md:col-start-9 md:row-start-1">
-        {#include partials/resume-aside mainTitles=mainTitles /}
+        {#include partials/resume-aside sections=content.sideSections /}
       </aside>
 
       <div class="resume-main order-1 space-y-12 md:order-none md:col-span-8 md:col-start-1 md:row-start-1">
-        {#let profile = cdi:profile}
-        {#if profile.bio}
+        {#if content.profile.bio}
         <div class="resume-lead markdown text-base leading-relaxed text-body dark:text-body-dark">
-          {=profile.bio.markdownify}
+          {=content.profile.bio.markdownify}
         </div>
         {/if}
-        {/let}
-        {#include partials/resume-sections mainTitles=mainTitles /}
+        {#include partials/resume-sections sections=content.mainSections /}
       </div>
 
     </div>
-    {/let}
 
     <div class="resume-footer px-5 md:px-10">
       {#include partials/resume-footer /}
     </div>
   </div>
 </div>
+{/let}

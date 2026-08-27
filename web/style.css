@@ -1,9 +1,8 @@
-/* Uncomment one of these to change the color theme:
+/* Single bundler entry point: files prefixed with _ are fragments, not entries,
+   otherwise the bundler emits them twice — once on their own, once inlined here.
+   Design tokens first, then the accent palette, then the print sheet.
+   Swap the palette for _theme-emerald, -amber, -rose or -cyan, or drop the
+   import for the default purple. */
+@import "./_resume-theme.css";
 @import "./_theme-blue.css";
-@import "./_theme-emerald.css";
-@import "./_theme-amber.css";
-@import "./_theme-rose.css";
-@import "./_theme-cyan.css";
-*/
-@import "./_theme-blue.css";
-@import "./print.css";
+@import "./_print.css";
