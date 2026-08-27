@@ -1,4 +1,4 @@
-/* Feuille d'impression : le CV doit tenir sur 2 pages A4 lisibles en noir et blanc. */
+/* Print sheet: the resume must fit on 2 A4 pages, readable in black and white. */
 @media print {
 
   @page {
@@ -6,8 +6,8 @@
     margin: 10mm;
   }
 
-  /* Tous les utilitaires d'espacement Tailwind dérivent de --spacing (0.25rem par
-     défaut) : le réduire ici compacte marges, paddings et gaps d'un seul geste. */
+  /* Every Tailwind spacing utility derives from --spacing (0.25rem by default),
+     so lowering it here compacts margins, paddings and gaps in one move. */
   :root {
     --spacing: 0.22rem;
   }
@@ -20,7 +20,7 @@
     line-height: 1.4;
   }
 
-  /* Éléments d'écran sans objet sur papier */
+  /* Screen-only chrome, pointless on paper */
   .resume-toggle,
   .resume-photo,
   .resume-footer,
@@ -28,16 +28,15 @@
     display: none !important;
   }
 
-  /* Deux colonnes conservées, mais en flottant et non en grille : une grille
-     d'une seule rangée est repoussée en entier quand elle ne tient pas dans la
-     place restante, ce qui laissait une page blanche sous le bandeau. Un
-     flottant, lui, se fragmente : le texte s'écoule à côté du rail puis reprend
-     toute la largeur en dessous. */
+  /* Two columns kept, but as a float rather than a grid: a single row grid is
+     pushed whole when it does not fit in the remaining space, which left a
+     blank page under the header band. A float fragments instead: the text flows
+     beside the rail, then takes the full width below it. */
   .resume-grid {
     display: block !important;
     padding: 0 !important;
-    /* Respiration entre le bandeau et le début des deux colonnes : la marge est
-       portée par la grille pour pousser aussi le rail, qui flotte en haut. */
+    /* Breathing room between the band and the columns: the margin is carried by
+       the container so the rail, which floats at its top, is pushed down too. */
     margin-top: 0.9rem;
   }
 
@@ -51,7 +50,7 @@
     width: auto !important;
   }
 
-  /* Aplatir les fonds et bordures colorés */
+  /* Flatten colored backgrounds and borders */
   .resume-page,
   .resume-header,
   .resume-figures,
@@ -64,9 +63,9 @@
     padding: 0 !important;
   }
 
-  /* Les breakpoints Tailwind sont des media queries de largeur, sans type de
-     média : une page A4 utile (~45rem) est sous le seuil md (48rem), donc la
-     disposition en trois zones du bandeau doit être forcée ici. */
+  /* Tailwind breakpoints are width media queries with no media type: a usable
+     A4 page (~45rem) falls below the md threshold (48rem), so the three zone
+     header layout has to be forced here. */
   .resume-identity-row {
     flex-direction: row !important;
     align-items: flex-start !important;
@@ -90,8 +89,8 @@
     justify-content: flex-end !important;
   }
 
-  /* printSocial restreint les réseaux imprimés : les entrées non retenues
-     disparaissent, la liste complète restant affichée à l'écran. */
+  /* printSocial narrows the printed networks: entries left out disappear while
+     the full list stays on screen. */
   .resume-social-filtered li:not(.resume-print-keep) {
     display: none !important;
   }
@@ -108,10 +107,9 @@
     font-size: 8.5pt;
   }
 
-  /* Les chiffres clés sur une seule ligne, entre deux filets. Colonnes de
-     largeur égale comme la grille du web, et séparateurs en bordures : à
-     l'écran ils viennent d'un gap-px révélant un fond coloré, or les fonds ne
-     sont pas imprimés par défaut. */
+  /* Key figures on a single line, between two rules. Equal width columns like
+     the web grid, and separators as borders: on screen they come from a gap-px
+     revealing a colored background, which browsers do not print by default. */
   .resume-figures {
     display: flex !important;
     flex-wrap: nowrap;
@@ -145,8 +143,8 @@
     font-size: 8pt;
   }
 
-  /* Une section peut être coupée entre deux pages (sinon une longue section
-     est repoussée en entier), mais jamais un item au milieu. */
+  /* A section may be split across pages, otherwise a long one is pushed whole,
+     but an item is never cut in the middle. */
   .resume-section {
     break-inside: auto;
   }
@@ -167,9 +165,9 @@
     font-size: 10.5pt;
   }
 
-  /* Le filet sous un titre de section est une bordure de bloc : sans contexte de
-     formatage de bloc, elle garde toute la largeur du conteneur et passe sous le
-     rail flottant. flow-root la fait s'arrêter au bord du flottant. */
+  /* The rule under a section title is a block border: without a block
+     formatting context it keeps the full container width and slides under the
+     floating rail. flow-root makes it stop at the float edge. */
   .resume-section-title {
     display: flow-root;
   }
@@ -184,7 +182,7 @@
     margin-bottom: 0.2rem !important;
   }
 
-  /* Décor de timeline : invisible à l'impression, on récupère la largeur */
+  /* Timeline decoration: hidden on paper, the width is reclaimed */
   .resume-timeline {
     padding-left: 0 !important;
   }
@@ -194,8 +192,8 @@
     display: none !important;
   }
 
-  /* Les liens ne sont pas cliquables sur papier : on expose l'URL,
-     sauf dans le bandeau où le texte du lien est déjà l'URL. */
+  /* Links are not clickable on paper, so expose the URL, except in the header
+     band where the link text already is the URL. */
   a {
     color: #000 !important;
     text-decoration: none !important;

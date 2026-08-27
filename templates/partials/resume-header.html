@@ -1,8 +1,8 @@
 {#let profile = cdi:profile}
 <header class="resume-header border-b border-section-border dark:border-section-border-dark">
 
-  {! Trois zones : photo, identité, coordonnées. Les coordonnées forment un bloc
-     latéral plutôt que des rangées empilées sous le titre. !}
+  {! Three zones: picture, identity, contact details. The details form a side
+     block rather than rows stacked under the title. !}
   <div class="resume-identity-row flex flex-col gap-6 p-5 md:flex-row md:items-center md:gap-10 md:p-10">
     {#let picture = (profile.picture ?: 'profile.jpg')}
     {#if site.imageExists(picture)}
@@ -55,10 +55,10 @@
     </ul>
   </div>
 
-  {! Les réseaux : ligne de pied du bandeau, hors de la rangée identité pour ne
-     pas en contraindre la largeur (sinon le titre du poste passe à la ligne).
-     Le frontmatter printSocial restreint la liste à l'impression ; sans cette
-     clé, tout est imprimé. !}
+  {! Social networks: a footer line of the header band, kept out of the identity
+     row so it does not constrain its width, which would wrap the job title.
+     The printSocial frontmatter narrows the list on paper; without that key,
+     everything is printed. !}
   {#if cdi:social}
   <ul class="resume-social {#if page.data.printSocial}resume-social-filtered{/if} flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-xs text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
     {#for item in cdi:social.items}
