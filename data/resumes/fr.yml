@@ -11,12 +11,11 @@ profile:
   email: s.philippart@gmail.com
   site: https://philippart-s.github.io/blog/
   bio: |
-    Depuis 27 ans, mon métier est le même : faire adopter des plateformes techniques
-    par des développeurs : 14 ans en interne comme architecte et platform engineer,
-    puis en public depuis 2022 comme Developer Advocate.
+    Depuis plus de 20 ans, mon métier est le même : faire adopter des plateformes techniques par des développeuses et des développeurs. 
+    14 ans en interne comme architecte et platform engineer, puis en public depuis 2022 comme Developer Advocate.
 
-    Aujourd'hui je travaille sur l'IA pour les développeuses et développeurs (RAG, tool calling, MCP, agents) et sur le cloud native. 
-    Java reste mon langage d'expertise, Python fait partie de mon quotidien côté IA.
+    Aujourd'hui je travaille sur l'IA côté développement (RAG, tool calling, MCP, agents) et sur le cloud native. 
+    Java reste mon langage d'expertise, Python est mon quotidien sur la partie IA.
 
 availability: Remote / déplacements France & Europe
 
@@ -34,7 +33,7 @@ highlights:
     detail: "blog, guides produit, presse spécialisée"
 
   - value: "250+"
-    label: "platform engineering  utilisatrices / utilisateurs"
+    label: "développeuses & développeurs sur mes plateformes"
     detail: "socles et CI/CD sur plus de 100 applications"
 
   - value: "70"
@@ -51,9 +50,9 @@ sections:
           OVHcloud (Paris, remote) _IA · Cloud native · Java · Python · Docker · Kubernetes_
 
           - Lead d'une équipe DevRel de 3 personnes pendant 2 ans : encadrement, stratégie d'équipe, budget annuel, onboarding d'un nouvel entrant.
-          - **77 talks** en 4 ans (~19/an) : Devoxx France, UK, Belgique, Voxxed Days Zurich, Confoo, ... Audience maximale : 500 personnes. **Un talk sur les CLI IA sélectionné plus de 20 fois par des comités de programme.**
+          - **77 talks** en 4 ans (~19/an) dans plus de 30 conférences (Devoxx France, UK, Belgique, Voxxed Days Zurich, DevFest Nantes). Audience maximale : 500 personnes. 
           - Plus de **100 articles techniques** : blog personnel, guides officiels produit, magazine Programmez. Publications atteignant régulièrement ~1 000 interactions professionnelles.
-          - **Intégration des produits IA OVHcloud à de nombreux outils et frameworks** (Docker Model Runner, LangChain4j, ...).
+          - Intégration et référencement des produits IA OVHcloud dans les principaux outils et frameworks de l'écosystème, dont Docker Model Runner et LangChain4j : relation directe avec les équipes de ces produits, tests des versions préliminaires, remontée de bugs, tutoriels avec code
           - Premier utilisateur interne des produits IA avant mise sur le marché : détection et remontée aux PM/PO des défauts d'API avant exposition publique.
           - Développement de POC et démos servant de support aux talks et à la documentation officielle.
 
@@ -70,9 +69,9 @@ sections:
         content: |
           **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
-          - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 100 applications**.
+          - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeuses / développeurs sur plus de 100 applications**.
           - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
-          - Mise en place d'une platforme engineering pour 250 développeuses / développeurs par industrialisation des socles et des pipelines.
+          - **Bootstrap d'un nouveau projet ramené de plusieurs jours (voire semaines) à immédiat** par industrialisation des socles et des pipelines.
           - Tech lead d'une équipe de 5 personnes.
 
       - header: "1999 - 2008"
