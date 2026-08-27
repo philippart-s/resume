@@ -51,7 +51,7 @@ sections:
           OVHcloud (Paris, remote) _AI · Cloud native · Java · Python · Docker · Kubernetes_
 
           - Led a DevRel team of 3 people for 2 years: management, team strategy, annual budget, onboarding of a new joiner.
-          - **77 talks** in 4 years (~19/year) across 30+ (Devoxx France, UK, Belgium, Voxxed Days Zurich, DevFest Nantes). Largest audience: 500 people.
+          - **77 talks** in 4 years (~19/year) across 30+ conferences (Devoxx France, UK, Belgium, Voxxed Days Zurich, DevFest Nantes). Largest audience: 500 people.
           - More than **100 technical articles**: personal blog, official product guides, Programmez magazine. Publications regularly reaching ~1,000 professional interactions.
           - Drove the integration and referencing of OVHcloud AI products into the ecosystem's leading tools and frameworks, including Docker Model Runner and LangChain4j: direct relationship with those product teams, early-version testing, bug reports, tutorials with working code.
           - First internal user of the AI products before release: spotting API defects and reporting them to PMs and POs before public exposure.
@@ -68,11 +68,11 @@ sections:
       - header: "Harmonie Mutuelle, 2008 → 2022"
         title: "Tech Lead / Software Architect & Platform Engineer"
         content: |
-          **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+          **Harmonie-Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
           - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 100 applications**.
-          - Designed the continuous integration platform — Jenkins 2 as pipelines-as-code (several hundred pipelines in production), **SonarQube**, GitHub — then the CD chain on OpenShift.
-          - Built a platform engineering offering for 250 developers by industrialising the foundations and the pipelines.
+          - Designed the continuous integration platform, Jenkins 2 as pipelines-as-code (several hundred pipelines in production), SonarQube, GitHub, then the CD chain on OpenShift.
+          - Cut new-project bootstrap time from days (sometimes weeks) to immediate by industrialising the foundations and the pipelines.
           - Tech lead of a team of 5 people.
 
       - header: "1999 - 2008"
@@ -81,7 +81,7 @@ sections:
           Prima Solutions (Paris), Delta Informatique (Tours), Apside (Tours) - Java - JEE - Weblogic
 
           - Designed and developed web applications for the banking and insurance sectors.
-          - Tech lead and technical project manager over the last years.
+          - Tech lead and technical project manager in the later years.
 
   - title: Skills
     items:
