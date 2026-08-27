@@ -31,6 +31,7 @@ A static resume site (Quarkus + Roq), rendered in French at `/` and English at
 | page structure | `templates/layouts/resume.html` and `templates/partials/` |
 | colors, tokens, spacing | `web/style.css` and its `_*.css` fragments |
 | paper output | `web/_print.css` |
+| link preview card, favicon | `public/images/*.svg`, regenerated to PNG (see README) |
 | data shape | `src/main/java/dev/philippart/resume/Resumes.java` |
 
 **Never put resume content in a template.** Section titles, labels and figures all

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Source of og-card.png, the link preview image. The canvas is square because
+     the rasterizer (qlmanage) fits into a square: the card itself is the middle
+     630 rows, which sips then crops. See ARCHITECTURE.md to regenerate. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <rect width="1200" height="1200" fill="#ffffff"/>
+
+  <defs>
+    <clipPath id="photo-clip">
+      <circle cx="250" cy="590" r="150"/>
+    </clipPath>
+  </defs>
+  <circle cx="250" cy="590" r="156" fill="#dbeafe"/>
+  <image href="stephane_philippart.jpg" x="100" y="440" width="300" height="300"
+         preserveAspectRatio="xMidYMid slice" clip-path="url(#photo-clip)"/>
+
+  <text x="470" y="532" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="bold" fill="#0f172a">Stéphane Philippart</text>
+  <text x="470" y="606" font-family="Helvetica, Arial, sans-serif" font-size="44" fill="#2563eb">Senior Developer Advocate</text>
+  <text x="470" y="662" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#4b5563">AI · Cloud Native · Java</text>
+
+  <rect x="470" y="712" width="620" height="2" fill="#e5e7eb"/>
+  <text x="470" y="770" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#6b7280">77 talks · 100+ articles · 70 meetups</text>
+
+  <rect x="0" y="903" width="1200" height="12" fill="#2563eb"/>
+</svg>
