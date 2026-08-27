@@ -157,6 +157,14 @@
     break-inside: auto;
   }
 
+  /* Rail sections are kept whole: none is taller than a page, and it prevents a
+     title stranded at the bottom of a column with its content overleaf.
+     break-after: avoid on the heading is not enough — Chromium largely ignores
+     it in print, while it does honour break-inside. */
+  .resume-aside .resume-section {
+    break-inside: avoid;
+  }
+
   .resume-item,
   .resume-aside li {
     break-inside: avoid;
@@ -178,6 +186,8 @@
      floating rail. flow-root makes it stop at the float edge. */
   .resume-section-title {
     display: flow-root;
+    break-after: avoid;
+    page-break-after: avoid; /* legacy alias, honoured more reliably in Chromium */
   }
 
   .resume-lead {
