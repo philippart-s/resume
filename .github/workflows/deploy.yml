@@ -7,9 +7,17 @@ on:
     - cron: "0 5 * * *"  # Runs every day at 05:00 UTC to publish scheduled content
   workflow_dispatch:
 
+# Least privilege by default: the build job hands GITHUB_TOKEN to a third party
+# action, so it gets no more than reading the repository and the Pages URL.
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read       # the Roq action reads the Pages url through the token
     steps:
       - uses: actions/checkout@v6
       - name: Generate Roq Site
