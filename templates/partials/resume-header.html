@@ -1,7 +1,9 @@
 {#let profile = cdi:profile}
 <header class="resume-header border-b border-section-border dark:border-section-border-dark">
 
-  <div class="flex flex-col gap-6 p-5 md:flex-row md:items-center md:gap-10 md:p-10">
+  {! Trois zones : photo, identité, coordonnées. Les coordonnées forment un bloc
+     latéral plutôt que des rangées empilées sous le titre. !}
+  <div class="resume-identity-row flex flex-col gap-6 p-5 md:flex-row md:items-center md:gap-10 md:p-10">
     {#let picture = (profile.picture ?: 'profile.jpg')}
     {#if site.imageExists(picture)}
     <img
@@ -12,65 +14,61 @@
     {/if}
     {/let}
 
-    <div class="space-y-2">
+    <div class="resume-identity space-y-2 md:flex-1">
       <h1 class="text-3xl leading-tight font-extrabold text-heading md:text-5xl dark:text-heading-dark">
         {=profile.firstName} {=profile.lastName}
       </h1>
       <p class="text-xl font-medium text-job-title md:text-2xl dark:text-job-title-dark">
         {=profile.jobTitle}
       </p>
-      {! Ligne 1 : où je suis et comment je travaille !}
-      <ul class="resume-contact flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted dark:text-muted-dark">
-        {#if profile.city && profile.country}
-        <li class="inline-flex items-center gap-1.5">
-          {#include partials/resume-icon name="Localisation" /}
-          <span>{=profile.city}, {=profile.country}</span>
-        </li>
-        {/if}
-        {#if page.data.availability}
-        <li class="inline-flex items-center gap-1.5">
-          {#include partials/resume-icon name="Disponibilité" /}
-          <span>{=page.data.availability}</span>
-        </li>
-        {/if}
-      </ul>
-
-      {! Ligne 2 : comment me joindre !}
-      <ul class="resume-contact flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted dark:text-muted-dark">
-        {#if profile.email}
-        <li>
-          <a class="inline-flex items-center gap-1.5 underline hover:text-body dark:hover:text-body-dark" href="mailto:{=profile.email}">
-            {#include partials/resume-icon name="Email" /}
-            <span>{=profile.email}</span>
-          </a>
-        </li>
-        {/if}
-        {#if profile.site}
-        <li>
-          <a class="inline-flex items-center gap-1.5 underline hover:text-body dark:hover:text-body-dark" href="{=profile.site}" target="_blank" rel="noopener noreferrer">
-            {#include partials/resume-icon name="Site" /}
-            <span>{=profile.site}</span>
-          </a>
-        </li>
-        {/if}
-      </ul>
-
-      {! Ligne 3 : les réseaux !}
-      {#if cdi:social}
-      <ul class="resume-social flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted dark:text-muted-dark">
-        {#for item in cdi:social.items}
-        <li>
-          <a class="inline-flex items-center gap-1.5 hover:text-body dark:hover:text-body-dark"
-             href="{=item.url}" target="_blank" rel="noopener noreferrer" title="{=item.name}">
-            {#include partials/resume-icon name=item.name /}
-            <span>{=item.type ?: item.name}</span>
-          </a>
-        </li>
-        {/for}
-      </ul>
-      {/if}
     </div>
+
+    <ul class="resume-contact flex flex-col gap-1 text-sm text-muted md:flex-none md:items-end dark:text-muted-dark">
+      {#if profile.city && profile.country}
+      <li class="inline-flex items-center gap-1.5">
+        {#include partials/resume-icon name="Localisation" /}
+        <span>{=profile.city}, {=profile.country}</span>
+      </li>
+      {/if}
+      {#if page.data.availability}
+      <li class="inline-flex items-center gap-1.5">
+        {#include partials/resume-icon name="Disponibilité" /}
+        <span>{=page.data.availability}</span>
+      </li>
+      {/if}
+      {#if profile.email}
+      <li>
+        <a class="inline-flex items-center gap-1.5 underline hover:text-body dark:hover:text-body-dark" href="mailto:{=profile.email}">
+          {#include partials/resume-icon name="Email" /}
+          <span>{=profile.email}</span>
+        </a>
+      </li>
+      {/if}
+      {#if profile.site}
+      <li>
+        <a class="inline-flex items-center gap-1.5 underline hover:text-body dark:hover:text-body-dark" href="{=profile.site}" target="_blank" rel="noopener noreferrer">
+          {#include partials/resume-icon name="Site" /}
+          <span>{=profile.site}</span>
+        </a>
+      </li>
+      {/if}
+    </ul>
   </div>
+
+  {! Ligne de pied du bandeau : les réseaux, avec leurs handles !}
+  {#if cdi:social}
+  <ul class="resume-social flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-sm text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
+    {#for item in cdi:social.items}
+    <li>
+      <a class="inline-flex items-center gap-1.5 hover:text-body dark:hover:text-body-dark"
+         href="{=item.url}" target="_blank" rel="noopener noreferrer" title="{=item.name}">
+        {#include partials/resume-icon name=item.name /}
+        <span>{=item.type ?: item.name}</span>
+      </a>
+    </li>
+    {/for}
+  </ul>
+  {/if}
 
   {#if cdi:highlights}
   <dl class="resume-figures grid grid-cols-2 gap-px border-t border-section-border bg-section-border sm:grid-cols-3 lg:grid-cols-5 dark:border-section-border-dark dark:bg-section-border-dark">

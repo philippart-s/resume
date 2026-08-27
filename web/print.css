@@ -64,6 +64,30 @@
     padding: 0 !important;
   }
 
+  /* Les breakpoints Tailwind sont des media queries de largeur, sans type de
+     média : une page A4 utile (~45rem) est sous le seuil md (48rem), donc la
+     disposition en trois zones du bandeau doit être forcée ici. */
+  .resume-identity-row {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+  }
+
+  .resume-identity {
+    flex: 1 1 auto !important;
+  }
+
+  .resume-contact {
+    flex: none !important;
+    align-items: flex-end !important;
+    text-align: right;
+  }
+
+  .resume-social {
+    justify-content: flex-end !important;
+  }
+
   .resume-header h1 {
     font-size: 17pt;
   }
@@ -75,6 +99,11 @@
   .resume-contact,
   .resume-social {
     font-size: 8.5pt;
+  }
+
+  .resume-social {
+    padding: 0 !important;
+    margin-top: 0.2rem;
   }
 
   /* Les chiffres clés sur une seule ligne, entre deux filets */
