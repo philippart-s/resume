@@ -10,7 +10,26 @@
 <base href="{=page.url.relative}">
 
 {#favicon site/}
-{#seo page site /}
+
+{! Roq's {#seo} tag renders "page title - site title", and the site title is the
+   French index page's own title, which would leak French into the English tab.
+   Same tags, but the page title stands alone. !}
+{#seoTitle pageTitle=page.title siteTitle=page.title /}
+{#seoDescription pageDescription=page.description siteDescription=site.description /}
+{#seoAuthor pageAuthor=page.data.author?? siteAuthor=site.data.author?? /}
+{#seoRobots page /}
+{#seoUrl url=page.url /}
+{#seoType page /}
+{#seoImage page site /}
+{#seoPaginator page site /}
+{#seoLocale pageLocale=page.data.lang?? siteLocale=site.data.lang?? defaultLocale=global:locale /}
+{#seoGenerator name="Quarkus Roq" version=global:roqVersion /}
 {#rss site /}
+
+{#for p in site.pages}
+{#if p.data.getBoolean('nav')}
+<link rel="alternate" hreflang="{=p.data.getString('lang') ?: 'fr'}" href="{=p.url}" />
+{/if}
+{/for}
 
 {#bundle /}

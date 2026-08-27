@@ -1,0 +1,153 @@
+# English resume. Mirror of fr.yml, same figures, translated content.
+
+profile:
+  firstName: Stéphane
+  lastName: Philippart
+  picture: stephane_philippart.jpg
+  jobTitle: Senior Developer Advocate - AI / Cloud Native
+  city: Tours
+  country: France
+  email: s.philippart@gmail.com
+  site: https://philippart-s.github.io/blog/
+  bio: |
+    For 24 years my job has been the same: getting developers to adopt technical
+    platforms — 14 years in house as an architect and platform engineer, then in
+    public since 2022 as a Developer Advocate.
+
+    Today I work on AI for developers (RAG, tool calling, MCP, agents) and on cloud
+    native. Java remains my language of expertise, Python is part of my daily work
+    on the AI side.
+
+availability: Remote / travel across France & Europe
+
+highlights:
+  - value: "24 years"
+    label: "of experience"
+    detail: "development, architecture, platform engineering, advocacy"
+
+  - value: "77"
+    label: "conference talks"
+    detail: "in 4 years, European Java & AI / cloud circuit"
+
+  - value: "100+"
+    label: "technical articles"
+    detail: "blog, product guides, tech press"
+
+  - value: "250+"
+    label: "platform engineering users"
+    detail: "foundations and CI/CD across more than 100 applications"
+
+  - value: "70"
+    label: "meetups organised"
+    detail: "TADx, 7 years"
+
+sections:
+  - title: Professional experience
+    main: true
+    items:
+      - header: "OVHcloud, 2022 → today"
+        title: "Senior Developer Advocate & Team Lead"
+        content: |
+          OVHcloud (Paris, remote) _AI · Cloud native · Java · Python · Docker · Kubernetes_
+
+          - Led a DevRel team of 3 people for 2 years: management, team strategy, annual budget, onboarding of a new joiner.
+          - **77 talks** in 4 years (~19/year): Devoxx France, UK, Belgium, Voxxed Days Zurich, Confoo, ... Largest audience: 500 people. **A talk on AI CLIs selected more than 20 times by programme committees.**
+          - More than **100 technical articles**: personal blog, official product guides, Programmez magazine. Publications regularly reaching ~1,000 professional interactions.
+          - **Integration of OVHcloud AI products into many tools and frameworks** (Docker Model Runner, LangChain4j, ...).
+          - First internal user of the AI products before release: spotting API defects and reporting them to PMs and POs before public exposure.
+          - POCs and demos backing the talks and the official documentation.
+
+      - header: "Community & public output"
+        title: ""
+        content: |
+          - **[TADx](https://www.tadx.fr/)**: co-founder of the Tours tech meetup. **70 editions in 7 years**, 20 to 30 attendees per edition.
+          - **Tranches de Tech**: co-host of the monthly technical podcast. 30 episodes.
+          - **Technical blog**: https://philippart-s.github.io/blog
+          - **Talks**: https://philippart-s.github.io/blog/conferences/
+
+      - header: "Harmonie Mutuelle, 2008 → 2022"
+        title: "Tech Lead / Software Architect & Platform Engineer"
+        content: |
+          **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+
+          - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 200 applications**.
+          - Designed the continuous integration platform — Jenkins 2 as pipelines-as-code (several hundred pipelines in production), **SonarQube**, GitHub — then the CD chain on OpenShift.
+          - Built a platform engineering offering for 250 developers by industrialising the foundations and the pipelines.
+          - Tech lead of a team of 5 people.
+
+      - header: "1999 - 2008"
+        title: "Engineer then technical project manager, Java / JEE"
+        content: |
+          Prima Solutions (Paris), Delta Informatique (Tours), Apside (Tours) - Java - JEE - Weblogic
+
+          - Designed and developed web applications for the banking and insurance sectors.
+          - Tech lead and technical project manager over the last years.
+
+  - title: Skills
+    items:
+      - header: "Artificial Intelligence"
+        title: "RAG, tool calling, MCP, agents, fine tuning, Java ML/DL ecosystem"
+      - header: "Java"
+        title: "Java, Quarkus, JBang, Picocli, Spring, LangChain4j"
+      - header: "Cloud & platform"
+        title: "Docker, Kubernetes, OpenShift, Terraform/OpenTofu, Pulumi, CI/CD, Jenkins, SonarQube"
+      - header: "Advocacy"
+        title: "Public speaking, technical writing, community building, product relationship"
+
+  - title: Education
+    items:
+      - header: "Computer science engineering degree, Polytech Tours."
+
+  - title: Open Source Contributions
+    items:
+      - header: "Jenkins"
+        title: "Jenkins conventional commits plugin"
+        link: https://github.com/jenkinsci/conventional-commits-plugin/
+        content: |
+          Jenkins plugin computing versions automatically from commit messages.
+
+      - header: "Community"
+        title: "Developers Conferences Agenda/List"
+        link: https://github.com/scraly/developers-conferences-agenda
+        content: |
+          Repository centralising conference and CFP dates.
+
+      - header: "Java & AI"
+        title: "LangChain4j"
+        link: https://github.com/langchain4j/langchain4j/
+        content: |
+          Contributor: integration of an LLM provider into the framework.
+
+  - title: Languages
+    items:
+      - header: "French"
+        title: "Native"
+
+      - header: "English"
+        title: "Professional"
+
+  - title: Interests
+    items:
+      - header: "Running · Cooking"
+
+social:
+  - name: LinkedIn
+    type: philippartstephane
+    url: https://www.linkedin.com/in/philippartstephane
+    print: true
+
+  - name: GitHub
+    type: "@philippart-s"
+    url: https://github.com/philippart-s
+
+  - name: GitLab
+    type: "@philippart-s"
+    url: https://gitlab.com/philippart-s
+
+  - name: X
+    type: "@wildagsx"
+    url: https://x.com/wildagsx
+
+  - name: Stack Overflow
+    type: wilda
+    url: https://stackoverflow.com/users/2471248/wilda

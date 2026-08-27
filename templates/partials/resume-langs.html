@@ -1,0 +1,18 @@
+{! Language switcher: every page flagged `nav: true` shows up here, so a private
+   variant simply omits the flag and stays out. !}
+{#let currentLang = page.data.getString('lang').or('fr')}
+<nav class="resume-langs fixed top-0 right-12 z-50 flex h-12 items-center gap-2 text-sm">
+  {#for p in site.pages}
+  {#if p.data.getBoolean('nav')}
+  {#let code = p.data.getString('lang').or('fr')}
+  {#if code == currentLang}
+  <span class="font-semibold text-heading dark:text-heading-dark" aria-current="page">{=code.toUpperCase}</span>
+  {#else}
+  <a class="text-muted underline hover:text-body dark:text-muted-dark dark:hover:text-body-dark"
+     href="{=p.url}" hreflang="{=code}">{=code.toUpperCase}</a>
+  {/if}
+  {/let}
+  {/if}
+  {/for}
+</nav>
+{/let}

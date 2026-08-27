@@ -31,9 +31,11 @@ then "Save as PDF". A dedicated print stylesheet reflows it for paper, see
 | File | Holds |
 |---|---|
 | `data/resumes/fr.yml` | the whole French resume: identity, figures, sections, accounts |
+| `data/resumes/en.yml` | the English one, same structure |
 | `data/resumes/<id>.yml` | any other version, one file each |
 | `public/images/` | the profile picture, and any other image |
-| `content/index.html` | the French page: its title, and which version it renders |
+| `content/index.html` | the French page, served at `/` |
+| `content/en.html` | the English page, served at `/en/` |
 
 The `data/resumes/` directory must hold at least one file. A **misspelled key
 fails the build** with the field name, the known keys and the path in the YAML, so
@@ -108,11 +110,17 @@ description: …
 layout: resume
 lang: en
 resume: <id>
+nav: true
 ---
 ```
 
 The page URL comes from the file name, so `content/en.html` is served at `/en/`.
 No template and no Java to change.
+
+Pages flagged `nav: true` are listed in the **language switcher** shown top right,
+and declared to search engines as `hreflang` alternates of each other. Leave the
+flag out for a version aimed at a single application: it stays reachable by URL
+but is neither advertised nor indexed as an alternate.
 
 ## Page settings
 
@@ -123,6 +131,7 @@ No template and no Java to change.
 | `layout` | must stay `resume` |
 | `lang` | `<html lang>` and `og:locale`; defaults to `fr` |
 | `resume` | which file of `data/resumes/` to render, without its extension; defaults to `fr` |
+| `nav` | `true` puts the page in the language switcher, top right. A version you would rather not advertise simply omits it |
 
 Asking for a version that does not exist fails with the list of the available
 ones, rather than rendering an empty page.
@@ -152,11 +161,11 @@ file:
 | `--spacing` | `0.22rem` | every margin, padding and gap at once (the screen scale is `0.25rem`) |
 | `font-size` on `html, body` | `9.5pt` | text density; below `9pt` paper reading suffers |
 
-Dropped when printing: the dark mode toggle, the figure details, the footer, the
-timeline decoration, and the social accounts not flagged `print: true` — when no
-account is flagged, all of them are printed. The profile picture is kept, at a
-fixed 22 mm. Link URLs are printed in parentheses after the link text, since a
-printed link cannot be clicked.
+Dropped when printing: the dark mode toggle, the language switcher, the figure
+details, the footer, the timeline decoration, and the social accounts not flagged
+`print: true` — when no account is flagged, all of them are printed. The profile
+picture is kept, at a fixed 22 mm. Link URLs are printed in parentheses after the
+link text, since a printed link cannot be clicked.
 
 ## Colors
 
