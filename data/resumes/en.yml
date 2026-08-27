@@ -10,8 +10,8 @@ profile:
   email: s.philippart@gmail.com
   site: https://philippart-s.github.io/blog/
   bio: |
-    For 27 years my job has been the same: getting developers to adopt technical
-    platforms — 14 years in house as an architect and platform engineer, then in
+    For over 20 years my job has been the same: getting developers to adopt technical
+    platforms. 14 years in-house as an architect and platform engineer, then in
     public since 2022 as a Developer Advocate.
 
     Today I work on AI for developers (RAG, tool calling, MCP, agents) and on cloud
@@ -34,7 +34,7 @@ highlights:
     detail: "blog, product guides, tech press"
 
   - value: "250+"
-    label: "platform engineering users"
+    label: "developers on my platforms"
     detail: "foundations and CI/CD across more than 100 applications"
 
   - value: "70"
@@ -51,9 +51,9 @@ sections:
           OVHcloud (Paris, remote) _AI · Cloud native · Java · Python · Docker · Kubernetes_
 
           - Led a DevRel team of 3 people for 2 years: management, team strategy, annual budget, onboarding of a new joiner.
-          - **77 talks** in 4 years (~19/year): Devoxx France, UK, Belgium, Voxxed Days Zurich, Confoo, ... Largest audience: 500 people. **A talk on AI CLIs selected more than 20 times by programme committees.**
+          - **77 talks** in 4 years (~19/year) across 30+ (Devoxx France, UK, Belgium, Voxxed Days Zurich, DevFest Nantes). Largest audience: 500 people.
           - More than **100 technical articles**: personal blog, official product guides, Programmez magazine. Publications regularly reaching ~1,000 professional interactions.
-          - **Integration of OVHcloud AI products into many tools and frameworks** (Docker Model Runner, LangChain4j, ...).
+          - Drove the integration and referencing of OVHcloud AI products into the ecosystem's leading tools and frameworks, including Docker Model Runner and LangChain4j: direct relationship with those product teams, early-version testing, bug reports, tutorials with working code.
           - First internal user of the AI products before release: spotting API defects and reporting them to PMs and POs before public exposure.
           - POCs and demos backing the talks and the official documentation.
 
