@@ -18,7 +18,10 @@ must read well in three contexts:
    band right under the identity, and why nothing is hidden behind interaction.
 
 There is no server: `roq generate` produces a static site, deployed to GitHub Pages
-by `.github/workflows/deploy.yml` on every push to `main`.
+by `.github/workflows/deploy.yml` on every push to `main`. That workflow pins
+`java-version: '25'`: the `quarkiverse/quarkus-roq` action installs **Java 21 by
+default**, which fails on `maven.compiler.release=25`. Raising the release in
+`pom.xml` means raising it there too.
 
 ## The one decision everything follows from: no theme
 

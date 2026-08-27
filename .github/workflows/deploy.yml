@@ -15,6 +15,7 @@ jobs:
       - name: Generate Roq Site
         uses: quarkiverse/quarkus-roq@v1.1
         with:
+          java-version: '25'                          # The action defaults to 21, the project builds with release 25
           github-token: ${{ secrets.GITHUB_TOKEN }}   # Used to automatically get the GitHub Pages url
   deploy:
     environment:
