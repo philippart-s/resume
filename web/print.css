@@ -85,7 +85,15 @@
   }
 
   .resume-social {
+    padding: 0 !important;
+    margin-top: 0.35rem;
     justify-content: flex-end !important;
+  }
+
+  /* printSocial restreint les réseaux imprimés : les entrées non retenues
+     disparaissent, la liste complète restant affichée à l'écran. */
+  .resume-social-filtered li:not(.resume-print-keep) {
+    display: none !important;
   }
 
   .resume-header h1 {
@@ -96,14 +104,8 @@
     font-size: 11.5pt;
   }
 
-  .resume-contact,
-  .resume-social {
+  .resume-contact {
     font-size: 8.5pt;
-  }
-
-  .resume-social {
-    padding: 0 !important;
-    margin-top: 0.5rem;
   }
 
   /* Les chiffres clés sur une seule ligne, entre deux filets. Colonnes de

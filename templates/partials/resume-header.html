@@ -55,11 +55,14 @@
     </ul>
   </div>
 
-  {! Ligne de pied du bandeau : les réseaux, avec leurs handles !}
+  {! Les réseaux : ligne de pied du bandeau, hors de la rangée identité pour ne
+     pas en contraindre la largeur (sinon le titre du poste passe à la ligne).
+     Le frontmatter printSocial restreint la liste à l'impression ; sans cette
+     clé, tout est imprimé. !}
   {#if cdi:social}
-  <ul class="resume-social flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-sm text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
+  <ul class="resume-social {#if page.data.printSocial}resume-social-filtered{/if} flex flex-wrap items-center gap-x-4 gap-y-1 px-5 pb-5 text-xs text-muted md:justify-end md:px-10 md:pb-6 dark:text-muted-dark">
     {#for item in cdi:social.items}
-    <li>
+    <li class="{#if page.data.printSocial && page.data.printSocial.contains(item.name)}resume-print-keep{/if}">
       <a class="inline-flex items-center gap-1.5 hover:text-body dark:hover:text-body-dark"
          href="{=item.url}" target="_blank" rel="noopener noreferrer" title="{=item.name}">
         {#include partials/resume-icon name=item.name /}
