@@ -46,3 +46,8 @@ nb-configuration.xml
 
 # Web Bundler
 node_modules/
+
+# Versions targeting a company live in a separate private repository, cloned here.
+# They must never reach this public repo: a file named after a company would tell
+# every other one where you applied.
+content/variants/

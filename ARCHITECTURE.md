@@ -73,9 +73,15 @@ base. Removing an entry
 whose key is unknown is an error rather than a silent no-op, since the entry meant
 to disappear would otherwise stay in the resume.
 
-Those pages carry `draft: true`: Roq leaves them out of the generated site, so a
-version written for one company is never published where another can read it. They
-are previewed and printed locally with `-Dsite.draft=true`.
+Those versions are kept in a **separate private repository, cloned into
+`content/variants/`**, which `.gitignore` excludes: a file named after a company
+never lands in this public repo or its history. Each is a single page carrying its
+delta in its own frontmatter, so the clone is self-sufficient — `data/resumes/`
+does not recurse into subdirectories, and Roq's scanner ignores symlinks, which
+ruled out pointing at the private repository from there. The pages also carry
+`draft: true`, keeping them out of the generated site: two independent guarantees,
+one on what is versioned, one on what is published. Previewing them locally takes
+`-Dsite.draft=true`.
 
 Two flags live in the data rather than in the page:
 

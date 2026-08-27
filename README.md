@@ -128,45 +128,55 @@ A version aimed at one company is a **delta, not a copy**: it names the version 
 builds on and carries only what it changes, so a fix to the base reaches every
 version at once.
 
-**1. The content** — `data/resumes/<target>.yml`:
+**Those versions are not kept here.** They live in a separate private repository,
+where they can be named after the company they target, cloned into this checkout
+once:
 
-```yaml
-base: fr                                   # the version to build upon
-profile:
-  jobTitle: Senior Developer Advocate - the angle that matters to this company
-  bio: |
-    Lead paragraph rewritten for this target.
-sections:
-  - title: Expériences professionnelles     # section matched by its title
-    items:
-      - header: "OVHcloud, 2022 → aujourd'hui"   # item matched by its header
-        content: |
-          Bullets reordered, the ones that matter to this company first.
-  - title: Centres d'intérêt
-    remove: true                            # drop a block to make room
+```bash
+git clone <private-repo-url> content/variants
 ```
 
-**2. The page** — `content/<target>.html`:
+`.gitignore` keeps that directory out of this public repo. Nothing is copied and
+nothing is generated: you edit a version in the private repository, and the site
+picks it up.
+
+**One version is one file**, `content/variants/<name>.html`, carrying its delta in
+its own frontmatter:
 
 ```
 ---
-title: CV de Stéphane Philippart
+title: Stéphane Philippart's resume
+description: ...
 layout: resume
-lang: fr
-resume: <target>
+lang: en
+resume: en                                 # the version it builds upon
 draft: true
+overlay:
+  profile:
+    jobTitle: Senior Developer Advocate - the angle that matters to this company
+    bio: |
+      Lead paragraph rewritten for this target.
+  sections:
+    - title: Professional experience       # section matched by its title
+      items:
+        - header: "OVHcloud, 2022 → today" # item matched by its header
+          content: |
+            Bullets reordered, the ones that matter to this company first.
+    - title: Skills
+      order: ["Cloud & platform", "Artificial Intelligence", "Java", "Advocacy"]
+    - title: Interests
+      remove: true                         # drop a block to make room
 ---
 ```
 
 `draft: true` keeps it **out of the published site**: it is not generated, not
-linked, not indexed — sending a link to one company never exposes the version
-written for another. Omit `nav: true` as well, so it stays out of the language
-switcher.
+linked, not indexed. Together with the private repository, that is two independent
+guarantees — one on what is published, one on what is versioned.
 
-**3. Preview and print it**:
+**Preview and print it**:
 
 ```bash
-./mvnw quarkus:dev -Dsite.draft=true      # then open /<target>/ and print to PDF
+roq start -Dsite.draft=true       # then open /variants/<name>/ and print to PDF
 ```
 
 ### What merges, and how
@@ -181,26 +191,19 @@ switcher.
 | `social` | merged by `name` |
 
 **Order** comes from the base. To change it, name the keys in an `order` list —
-section titles at the top level, item headers inside a section:
-
-```yaml
-sections:
-  - title: Skills
-    order: ["Artificial Intelligence", "Cloud & platform", "Java", "Advocacy"]
-```
-
-Keys named there come first, in that order; the others follow in their inherited
-order. This is deliberately not "restate the list to reorder it": restating a list
-copies its content too, which then drifts from the base. Naming a key that does not
-exist fails the page, like `remove`.
+section titles at the top level, item headers inside a section. Keys named there
+come first, in that order; the others follow in their inherited order. This is
+deliberately not "restate the list to reorder it": restating a list copies its
+content too, which then drifts from the base.
 
 Anything absent is inherited. A key unknown to the base is **appended** after the
 inherited entries — that is how you add a section or an item. `remove: true` drops
-an entry, and a `remove` on a key that does not exist **fails that page with the
-list of valid keys**, so a mistyped title never passes unnoticed.
+an entry, and both `remove` and `order` **fail the page with the list of valid
+keys** when they name something that does not exist, so a mistyped title never
+passes unnoticed.
 
-An English target names `base: en`. A version may itself build on another version;
-a cycle is reported rather than looping.
+A base itself may build on another base, through a `base:` key in
+`data/resumes/<id>.yml`; a cycle is reported rather than looping.
 
 ## Page settings
 

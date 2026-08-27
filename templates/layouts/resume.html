@@ -5,7 +5,7 @@ layout: base
 {@io.quarkiverse.roq.frontmatter.runtime.model.NormalPage page}
 
 {! The variant to render comes from the page `resume` key, French by default. !}
-{#let content = cdi:resumes.get(page.data.getString('resume') ?: 'fr')}
+{#let content = cdi:resumes.get(page.data.getString('resume') ?: 'fr', page.data.getJsonObject('overlay'))}
 <div
   x-data="{
         darkMode: false,

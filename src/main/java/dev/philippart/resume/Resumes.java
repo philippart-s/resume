@@ -12,6 +12,7 @@ import java.util.function.Predicate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.quarkiverse.roq.data.runtime.annotations.DataMapping;
+import io.vertx.core.json.JsonObject;
 
 /// Every resume variant, one YAML file per variant in `data/resumes/`.
 ///
@@ -27,9 +28,17 @@ import io.quarkiverse.roq.data.runtime.annotations.DataMapping;
 @DataMapping(value = "resumes", type = DataMapping.Type.OBJECT_DIR, required = true)
 public record Resumes(Map<String, Content> map) {
 
-    /// The variant a page asks for, with its base already merged in.
+    /// The version a page asks for, with its base already merged in.
     public Content get(String id) {
         return resolve(id, new LinkedHashSet<>());
+    }
+
+    /// The same, with an overlay carried by a page's own frontmatter rather than by
+    /// a file of `data/resumes/`: this is how a version targeting a company stays a
+    /// single file, kept in a private repository.
+    public Content get(String id, JsonObject overlay) {
+        var base = get(id);
+        return overlay == null ? base : merge(base, overlay.mapTo(Content.class));
     }
 
     private Content resolve(String id, Set<String> visited) {
