@@ -54,8 +54,11 @@
     margin: 0 0 0.8rem 1rem !important;
   }
 
+  /* Fixed width rather than auto: with auto, lines run the full page width as
+     soon as the floating rail ends, so the measure changes mid document. The
+     cost is an empty band on the right once the rail is over. */
   .resume-main {
-    width: auto !important;
+    width: 64% !important;
   }
 
   /* Flatten colored backgrounds and borders */

@@ -110,7 +110,9 @@ result of failures worth not repeating:
 
 1. **Two columns through a float, not the grid.** A single row CSS grid is pushed
    whole when it does not fit in the remaining space, which left an almost blank
-   first page. A float fragments properly.
+   first page. A float fragments properly. The main column carries a **fixed
+   width** rather than `auto`: with `auto`, its lines would run the full page
+   width as soon as the rail ends, changing the measure mid document.
 2. **`--spacing` is the density lever.** Every Tailwind spacing utility derives
    from it, so one value compacts margins, paddings and gaps together. With
    `font-size` on `html, body`, these are the only two knobs needed to fit two pages.
