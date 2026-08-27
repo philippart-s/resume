@@ -103,7 +103,7 @@
 
   .resume-social {
     padding: 0 !important;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
   }
 
   /* Les chiffres clés sur une seule ligne, entre deux filets */
@@ -113,8 +113,8 @@
     gap: 0 1rem;
     border-top: 1px solid #999 !important;
     border-bottom: 1px solid #999 !important;
-    padding: 0.3rem 0 !important;
-    margin: 0.3rem 0 0.5rem;
+    padding: 0.55rem 0 !important;
+    margin: 0.8rem 0 0;
   }
 
   .resume-figures > * {
