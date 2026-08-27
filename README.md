@@ -172,10 +172,11 @@ file:
 | `--spacing` | `0.22rem` | every margin, padding and gap at once (the screen scale is `0.25rem`) |
 | `font-size` on `html, body` | `9.5pt` | text density; below `9pt` paper reading suffers |
 
-Dropped when printing: the dark mode toggle, the profile picture, the figure
-details, the "Crafted with Roq" footer, the timeline decoration, and the social
-accounts not listed in `printSocial`. Link URLs are printed in parentheses after
-the link text, since a printed link cannot be clicked.
+Dropped when printing: the dark mode toggle, the figure details, the "Crafted
+with Roq" footer, the timeline decoration, and the social accounts not listed in
+`printSocial`. The profile picture is kept, at a fixed 22 mm. Link URLs are
+printed in parentheses after the link text, since a printed link cannot be
+clicked.
 
 ## Colors
 

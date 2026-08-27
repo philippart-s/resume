@@ -22,10 +22,17 @@
 
   /* Screen-only chrome, pointless on paper */
   .resume-toggle,
-  .resume-photo,
   .resume-footer,
   .resume-figure-detail {
     display: none !important;
+  }
+
+  /* Fixed size in millimetres: the screen size derives from --spacing, which is
+     lowered for print, so the picture would shrink with the rest. */
+  .resume-photo {
+    width: 22mm !important;
+    height: 22mm !important;
+    border-width: 1px !important;
   }
 
   /* Two columns kept, but as a float rather than a grid: a single row grid is
