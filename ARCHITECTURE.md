@@ -61,6 +61,28 @@ file per version, keyed by file name. A page picks one with its `resume`
 frontmatter key. **Adding a version is one YAML file plus one page — no Java, no
 template.**
 
+A version targeting a company is an **overlay**: it names a `base` and carries only
+the blocks it changes. Without it, each target would be a 150 line copy of the
+resume, and every correction to the shared content would have to be repeated in
+each. The merge is keyed — sections by title, items by header, accounts by name,
+figures by label — and happens **when a page renders**, not at build time, so a
+broken overlay breaks its own page and leaves the others serving. Reordering is a
+list of keys (`order`) rather than a restated list: restating a list to move one
+entry copies its content along the way, and that copy silently drifts from the
+base. Removing an entry
+whose key is unknown is an error rather than a silent no-op, since the entry meant
+to disappear would otherwise stay in the resume.
+
+Those versions are kept in a **separate private repository, cloned into
+`content/variants/`**, which `.gitignore` excludes: a file named after a company
+never lands in this public repo or its history. Each is a single page carrying its
+delta in its own frontmatter, so the clone is self-sufficient — `data/resumes/`
+does not recurse into subdirectories, and Roq's scanner ignores symlinks, which
+ruled out pointing at the private repository from there. The pages also carry
+`draft: true`, keeping them out of the generated site: two independent guarantees,
+one on what is versioned, one on what is published. Previewing them locally takes
+`-Dsite.draft=true`.
+
 Two flags live in the data rather than in the page:
 
 - `main: true` on a section puts it in the wide column, everything else goes to the

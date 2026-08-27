@@ -27,6 +27,7 @@ A static resume site (Quarkus + Roq), rendered in French at `/` and English at
 | Goal | Place |
 |---|---|
 | resume wording, figures, sections, accounts | `data/resumes/*.yml` |
+| a version targeting a company | not in this repo: one page carrying its overlay, in the private repository cloned at `content/variants/` (see README) |
 | what a page renders (version, language, listing) | frontmatter of `content/*.html` |
 | page structure | `templates/layouts/resume.html` and `templates/partials/` |
 | colors, tokens, spacing | `web/style.css` and its `_*.css` fragments |
