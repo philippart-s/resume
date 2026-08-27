@@ -1,7 +1,13 @@
 package dev.philippart.resume;
 
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -9,30 +15,41 @@ import io.quarkiverse.roq.data.runtime.annotations.DataMapping;
 
 /// Every resume variant, one YAML file per variant in `data/resumes/`.
 ///
+/// A variant is either a **base** — a complete resume, one per language — or an
+/// **overlay**: it names a `base` and carries only what it changes, which is how a
+/// version targeting a company stays a handful of lines instead of a full copy.
+/// Selection happens through the `resume` key of a page's frontmatter.
+///
 /// Roq serializes these records back to JSON between reading the directory and
 /// binding it, so every helper below is `@JsonIgnore`d: an accessor shaped method
 /// would otherwise be written to that intermediate JSON and rejected on the way
 /// back.
-///
-/// A new variant — another language, or a version targeting a given job — is a new
-/// file in that directory, selected by the `resume` key of a page's frontmatter.
-/// Neither this class nor the templates need to change.
 @DataMapping(value = "resumes", type = DataMapping.Type.OBJECT_DIR, required = true)
 public record Resumes(Map<String, Content> map) {
 
-    /// The variant a page asks for, failing with the available ids when it is missing,
-    /// which is friendlier than a template blowing up on a null.
+    /// The variant a page asks for, with its base already merged in.
     public Content get(String id) {
+        return resolve(id, new LinkedHashSet<>());
+    }
+
+    private Content resolve(String id, Set<String> visited) {
+        if (!visited.add(id)) {
+            throw new IllegalArgumentException("Resume variants form a cycle: %s".formatted(visited));
+        }
         var content = map.get(id);
         if (content == null) {
             throw new IllegalArgumentException(
                     "No resume variant [%s] in data/resumes/, available: %s".formatted(id, map.keySet()));
         }
-        return content;
+        return content.base() == null ? content : merge(resolve(content.base(), visited), content);
     }
 
-    /// One complete resume: who I am, the figures, the sections and the social accounts.
+    /// One resume: who I am, the figures, the sections and the social accounts.
+    ///
+    /// In an overlay, [#base()] names the variant to build upon and every other
+    /// block is optional: what is absent is inherited.
     public record Content(
+            String base,
             Profile profile,
             String availability,
             List<Highlight> highlights,
@@ -71,12 +88,12 @@ public record Resumes(Map<String, Content> map) {
             String bio) {
     }
 
-    /// A key figure of the header band: a [#value()] to scan, a [#label()] to read,
-    /// and a [#detail()] shown on screen only.
-    public record Highlight(String value, String label, String detail) {
+    /// A key figure of the header band, merged by [#label()].
+    public record Highlight(String value, String label, String detail, Boolean remove) {
     }
 
-    public record Section(String title, Boolean main, List<Item> items) {
+    /// A section, merged by [#title()].
+    public record Section(String title, Boolean main, Boolean remove, List<Item> items) {
 
         @JsonIgnore
         public boolean isMain() {
@@ -84,19 +101,125 @@ public record Resumes(Map<String, Content> map) {
         }
     }
 
-    /// [#header()] is the small line above [#title()]; [#content()] is markdown.
-    public record Item(String header, String title, String link, String content, Logo logo) {
+    /// An item, merged by [#header()]. [#content()] is markdown.
+    public record Item(String header, String title, String link, String content, Logo logo, Boolean remove) {
     }
 
     public record Logo(String label, String imageUrl, String link) {
     }
 
-    /// [#name()] selects the icon, [#type()] is the displayed handle.
-    public record Social(String name, String type, String url, Boolean print) {
+    /// A social account, merged by [#name()]. [#type()] is the displayed handle.
+    public record Social(String name, String type, String url, Boolean print, Boolean remove) {
 
         @JsonIgnore
         public boolean isPrinted() {
             return Boolean.TRUE.equals(print);
         }
+    }
+
+    // --- merging -----------------------------------------------------------
+    //
+    // One rule everywhere: a value given by the overlay wins, an absent one is
+    // inherited, and lists merge by key — title for sections, header for items,
+    // name for accounts, label for figures. An entry flagged `remove: true`
+    // disappears, and fails the page render if its key is unknown; any other
+    // unknown key is appended after the inherited ones. Merging happens when a
+    // page is rendered, so a broken overlay breaks that page only.
+
+    private static Content merge(Content base, Content overlay) {
+        return new Content(
+                null,
+                mergeProfile(base.profile(), overlay.profile()),
+                pick(overlay.availability(), base.availability()),
+                mergeList("figure", base.highlights(), overlay.highlights(), Highlight::label,
+                        Resumes::mergeHighlight, h -> Boolean.TRUE.equals(h.remove())),
+                mergeList("section", base.sections(), overlay.sections(), Section::title,
+                        Resumes::mergeSection, s -> Boolean.TRUE.equals(s.remove())),
+                mergeList("account", base.social(), overlay.social(), Social::name,
+                        Resumes::mergeSocial, s -> Boolean.TRUE.equals(s.remove())));
+    }
+
+    private static Profile mergeProfile(Profile base, Profile overlay) {
+        if (overlay == null || base == null) {
+            return overlay == null ? base : overlay;
+        }
+        return new Profile(
+                pick(overlay.firstName(), base.firstName()),
+                pick(overlay.lastName(), base.lastName()),
+                pick(overlay.picture(), base.picture()),
+                pick(overlay.jobTitle(), base.jobTitle()),
+                pick(overlay.city(), base.city()),
+                pick(overlay.country(), base.country()),
+                pick(overlay.email(), base.email()),
+                pick(overlay.site(), base.site()),
+                pick(overlay.bio(), base.bio()));
+    }
+
+    private static Highlight mergeHighlight(Highlight base, Highlight overlay) {
+        return new Highlight(
+                pick(overlay.value(), base.value()),
+                pick(overlay.label(), base.label()),
+                pick(overlay.detail(), base.detail()),
+                null);
+    }
+
+    private static Section mergeSection(Section base, Section overlay) {
+        return new Section(
+                pick(overlay.title(), base.title()),
+                pick(overlay.main(), base.main()),
+                null,
+                mergeList("item", base.items(), overlay.items(), Item::header,
+                        Resumes::mergeItem, i -> Boolean.TRUE.equals(i.remove())));
+    }
+
+    private static Item mergeItem(Item base, Item overlay) {
+        return new Item(
+                pick(overlay.header(), base.header()),
+                pick(overlay.title(), base.title()),
+                pick(overlay.link(), base.link()),
+                pick(overlay.content(), base.content()),
+                pick(overlay.logo(), base.logo()),
+                null);
+    }
+
+    private static Social mergeSocial(Social base, Social overlay) {
+        return new Social(
+                pick(overlay.name(), base.name()),
+                pick(overlay.type(), base.type()),
+                pick(overlay.url(), base.url()),
+                pick(overlay.print(), base.print()),
+                null);
+    }
+
+    private static <T> List<T> mergeList(String what, List<T> base, List<T> overlay,
+            Function<T, String> key, BinaryOperator<T> merger, Predicate<T> removed) {
+        if (overlay == null) {
+            return base;
+        }
+        if (base == null) {
+            return overlay.stream().filter(Predicate.not(removed)).toList();
+        }
+        var merged = new LinkedHashMap<String, T>();
+        base.forEach(entry -> merged.put(String.valueOf(key.apply(entry)), entry));
+        for (T entry : overlay) {
+            var entryKey = String.valueOf(key.apply(entry));
+            if (removed.test(entry)) {
+                if (merged.remove(entryKey) == null) {
+                    // Silently ignoring this would hide a typo in the key, and the
+                    // entry meant to disappear would quietly stay in the resume.
+                    // Raised while rendering, so only the faulty variant breaks.
+                    throw new IllegalArgumentException(
+                            "Cannot remove %s [%s]: no such key in the base, available: %s"
+                                    .formatted(what, entryKey, merged.keySet()));
+                }
+            } else {
+                merged.merge(entryKey, entry, merger);
+            }
+        }
+        return List.copyOf(merged.values());
+    }
+
+    private static <T> T pick(T overlay, T base) {
+        return overlay != null ? overlay : base;
     }
 }

@@ -122,6 +122,72 @@ and declared to search engines as `hreflang` alternates of each other. Leave the
 flag out for a version aimed at a single application: it stays reachable by URL
 but is neither advertised nor indexed as an alternate.
 
+## Targeting a company
+
+A version aimed at one company is a **delta, not a copy**: it names the version it
+builds on and carries only what it changes, so a fix to the base reaches every
+version at once.
+
+**1. The content** — `data/resumes/<target>.yml`:
+
+```yaml
+base: fr                                   # the version to build upon
+profile:
+  jobTitle: Senior Developer Advocate - the angle that matters to this company
+  bio: |
+    Lead paragraph rewritten for this target.
+sections:
+  - title: Expériences professionnelles     # section matched by its title
+    items:
+      - header: "OVHcloud, 2022 → aujourd'hui"   # item matched by its header
+        content: |
+          Bullets reordered, the ones that matter to this company first.
+  - title: Centres d'intérêt
+    remove: true                            # drop a block to make room
+```
+
+**2. The page** — `content/<target>.html`:
+
+```
+---
+title: CV de Stéphane Philippart
+layout: resume
+lang: fr
+resume: <target>
+draft: true
+---
+```
+
+`draft: true` keeps it **out of the published site**: it is not generated, not
+linked, not indexed — sending a link to one company never exposes the version
+written for another. Omit `nav: true` as well, so it stays out of the language
+switcher.
+
+**3. Preview and print it**:
+
+```bash
+./mvnw quarkus:dev -Dsite.draft=true      # then open /<target>/ and print to PDF
+```
+
+### What merges, and how
+
+| Block | Rule |
+|---|---|
+| `profile` | field by field: a field given here wins, the others are inherited |
+| `availability` | replaced when present |
+| `highlights` | merged by `label` |
+| `sections` | merged by `title` |
+| items inside a section | merged by `header` |
+| `social` | merged by `name` |
+
+Anything absent is inherited. A key unknown to the base is **appended** after the
+inherited entries — that is how you add a section or an item. `remove: true` drops
+an entry, and a `remove` on a key that does not exist **fails that page with the
+list of valid keys**, so a mistyped title never passes unnoticed.
+
+An English target names `base: en`. A version may itself build on another version;
+a cycle is reported rather than looping.
+
 ## Page settings
 
 | Key | Effect |

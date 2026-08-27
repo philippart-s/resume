@@ -61,6 +61,19 @@ file per version, keyed by file name. A page picks one with its `resume`
 frontmatter key. **Adding a version is one YAML file plus one page — no Java, no
 template.**
 
+A version targeting a company is an **overlay**: it names a `base` and carries only
+the blocks it changes. Without it, each target would be a 150 line copy of the
+resume, and every correction to the shared content would have to be repeated in
+each. The merge is keyed — sections by title, items by header, accounts by name,
+figures by label — and happens **when a page renders**, not at build time, so a
+broken overlay breaks its own page and leaves the others serving. Removing an entry
+whose key is unknown is an error rather than a silent no-op, since the entry meant
+to disappear would otherwise stay in the resume.
+
+Those pages carry `draft: true`: Roq leaves them out of the generated site, so a
+version written for one company is never published where another can read it. They
+are previewed and printed locally with `-Dsite.draft=true`.
+
 Two flags live in the data rather than in the page:
 
 - `main: true` on a section puts it in the wide column, everything else goes to the
