@@ -147,6 +147,8 @@ holds the state.
 | Expressions rendered literally | `quarkus.qute.alt-expr-syntax=true`: templates in this project write `{=expr}`. Only templates coming from a jar use `{expr}` |
 | A local layout ignored | a layout named like a theme layout is shadowed by the theme's. No longer applies here, since there is no theme — but it is why `base` and `resume` were once called `base-fr` and `resume-hybrid` |
 | English page titled in French | Roq's `{#seo}` tag composes `page title - site title`, and the site title is the French home page's. `resume-head.html` calls the subtags itself to avoid it |
+| `og:url` and `og:image` are relative when checked locally | `site.url` is unset in dev; the deploy action injects it, so the deployed page carries absolute URLs. Check a preview against the deployed site, never against localhost |
+| A shared link shows the wrong image | with no `image:` key on the page, no `og:image` is emitted at all and platforms fall back to the favicon. Both live in `public/images/`, generated from SVG sources — see the README |
 
 ## Verifying a change
 

@@ -195,6 +195,33 @@ The design tokens in `web/_resume-theme.css`, `resume.js` and three partials com
 from `quarkus-roq-theme-resume` (Apache-2.0), kept in the project when the theme
 dependency was dropped in favour of owning the data model.
 
+## Link preview and favicon
+
+Two images in `public/images/` are not resume content, but they are what people see
+before they read anything:
+
+| File | Shown |
+|---|---|
+| `og-card.png` (1200×630) | the preview card when the link is shared on LinkedIn, Slack, Teams… declared by `image: og-card.png` in each page |
+| `favicon.svg`, `favicon.png`, `apple-touch-icon.png` | the browser tab and mobile home screen icons |
+
+Both are generated from an SVG source kept next to them (`og-card.svg`,
+`favicon.svg`). **Edit the SVG, then regenerate** — for instance when the job title
+changes:
+
+```bash
+cd public/images
+qlmanage -t -s 1200 -o . og-card.svg && sips -c 630 1200 og-card.svg.png --out og-card.png && rm og-card.svg.png
+qlmanage -t -s 512  -o . favicon.svg && sips -z 180 180 favicon.svg.png --out apple-touch-icon.png \
+  && sips -z 32 32 favicon.svg.png --out favicon.png && rm favicon.svg.png
+```
+
+Those two commands are macOS only. The card canvas is square on purpose: the
+rasterizer fits into a square, and `sips` crops the middle 630 rows.
+
+Without `image:` on a page there is **no `og:image` at all**, and sharing platforms
+fall back to the favicon — which is how the Roq logo used to show up in previews.
+
 ## Maintaining the project
 
 [ARCHITECTURE.md](ARCHITECTURE.md) covers the architecture decisions, the rendering
