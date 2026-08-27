@@ -62,13 +62,13 @@ sections:
         content: |
           - **[TADx](https://www.tadx.fr/)**: co-founder of the Tours tech meetup. **70 editions in 7 years**, 20 to 30 attendees per edition.
           - **Tranches de Tech**: co-host of the monthly technical podcast. 30 episodes.
-          - **Technical blog**: https://philippart-s.github.io/blog
-          - **Talks**: https://philippart-s.github.io/blog/conferences/
+          - **[Technical blog](https://philippart-s.github.io/blog)**
+          - **[Talks](https://philippart-s.github.io/blog/conferences/)**
 
       - header: "Harmonie Mutuelle, 2008 → 2022"
         title: "Tech Lead / Software Architect & Platform Engineer"
         content: |
-          **Harmonie-Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+          **Harmonie Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
           - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 100 applications**.
           - Designed the continuous integration platform, Jenkins 2 as pipelines-as-code (several hundred pipelines in production), SonarQube, GitHub, then the CD chain on OpenShift.

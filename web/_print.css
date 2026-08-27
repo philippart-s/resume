@@ -54,8 +54,11 @@
     margin: 0 0 0.8rem 1rem !important;
   }
 
+  /* Fixed width rather than auto: with auto, lines run the full page width as
+     soon as the floating rail ends, so the measure changes mid document. The
+     cost is an empty band on the right once the rail is over. */
   .resume-main {
-    width: auto !important;
+    width: 64% !important;
   }
 
   /* Flatten colored backgrounds and borders */
@@ -157,6 +160,14 @@
     break-inside: auto;
   }
 
+  /* Rail sections are kept whole: none is taller than a page, and it prevents a
+     title stranded at the bottom of a column with its content overleaf.
+     break-after: avoid on the heading is not enough — Chromium largely ignores
+     it in print, while it does honour break-inside. */
+  .resume-aside .resume-section {
+    break-inside: avoid;
+  }
+
   .resume-item,
   .resume-aside li {
     break-inside: avoid;
@@ -178,6 +189,8 @@
      floating rail. flow-root makes it stop at the float edge. */
   .resume-section-title {
     display: flow-root;
+    break-after: avoid;
+    page-break-after: avoid; /* legacy alias, honoured more reliably in Chromium */
   }
 
   .resume-lead {
@@ -188,6 +201,11 @@
   .markdown ul,
   .markdown ol {
     margin-bottom: 0.2rem !important;
+  }
+
+  /* No token may overrun its column, whatever its length. */
+  .markdown {
+    overflow-wrap: break-word;
   }
 
   /* Timeline decoration: hidden on paper, the width is reclaimed */
@@ -212,6 +230,10 @@
     content: " (" attr(href) ")";
     font-size: 0.75em;
     color: #444;
-    word-break: break-all;
+    /* anywhere, not break-all: a long URL only breaks when the line cannot
+       hold it, instead of being cut mid-word every time. */
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: none;
   }
 }
