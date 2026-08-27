@@ -66,7 +66,10 @@ the blocks it changes. Without it, each target would be a 150 line copy of the
 resume, and every correction to the shared content would have to be repeated in
 each. The merge is keyed — sections by title, items by header, accounts by name,
 figures by label — and happens **when a page renders**, not at build time, so a
-broken overlay breaks its own page and leaves the others serving. Removing an entry
+broken overlay breaks its own page and leaves the others serving. Reordering is a
+list of keys (`order`) rather than a restated list: restating a list to move one
+entry copies its content along the way, and that copy silently drifts from the
+base. Removing an entry
 whose key is unknown is an error rather than a silent no-op, since the entry meant
 to disappear would otherwise stay in the resume.
 

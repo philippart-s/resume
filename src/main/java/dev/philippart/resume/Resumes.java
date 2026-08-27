@@ -53,6 +53,7 @@ public record Resumes(Map<String, Content> map) {
             Profile profile,
             String availability,
             List<Highlight> highlights,
+            List<String> order,
             List<Section> sections,
             List<Social> social) {
 
@@ -92,8 +93,8 @@ public record Resumes(Map<String, Content> map) {
     public record Highlight(String value, String label, String detail, Boolean remove) {
     }
 
-    /// A section, merged by [#title()].
-    public record Section(String title, Boolean main, Boolean remove, List<Item> items) {
+    /// A section, merged by [#title()]. [#order()] lists item headers to place first.
+    public record Section(String title, Boolean main, Boolean remove, List<String> order, List<Item> items) {
 
         @JsonIgnore
         public boolean isMain() {
@@ -125,16 +126,21 @@ public record Resumes(Map<String, Content> map) {
     // disappears, and fails the page render if its key is unknown; any other
     // unknown key is appended after the inherited ones. Merging happens when a
     // page is rendered, so a broken overlay breaks that page only.
+    //
+    // Order comes from the base unless the overlay names keys in `order`, which
+    // avoids restating a whole list — and its content — just to move one entry.
 
     private static Content merge(Content base, Content overlay) {
+        var sections = mergeList("section", base.sections(), overlay.sections(), Section::title,
+                Resumes::mergeSection, s -> Boolean.TRUE.equals(s.remove()));
         return new Content(
                 null,
                 mergeProfile(base.profile(), overlay.profile()),
                 pick(overlay.availability(), base.availability()),
                 mergeList("figure", base.highlights(), overlay.highlights(), Highlight::label,
                         Resumes::mergeHighlight, h -> Boolean.TRUE.equals(h.remove())),
-                mergeList("section", base.sections(), overlay.sections(), Section::title,
-                        Resumes::mergeSection, s -> Boolean.TRUE.equals(s.remove())),
+                null,
+                reorder("section", sections, overlay.order(), Section::title),
                 mergeList("account", base.social(), overlay.social(), Social::name,
                         Resumes::mergeSocial, s -> Boolean.TRUE.equals(s.remove())));
     }
@@ -164,12 +170,14 @@ public record Resumes(Map<String, Content> map) {
     }
 
     private static Section mergeSection(Section base, Section overlay) {
+        var items = mergeList("item", base.items(), overlay.items(), Item::header,
+                Resumes::mergeItem, i -> Boolean.TRUE.equals(i.remove()));
         return new Section(
                 pick(overlay.title(), base.title()),
                 pick(overlay.main(), base.main()),
                 null,
-                mergeList("item", base.items(), overlay.items(), Item::header,
-                        Resumes::mergeItem, i -> Boolean.TRUE.equals(i.remove())));
+                null,
+                reorder("item", items, overlay.order(), Item::header));
     }
 
     private static Item mergeItem(Item base, Item overlay) {
@@ -217,6 +225,30 @@ public record Resumes(Map<String, Content> map) {
             }
         }
         return List.copyOf(merged.values());
+    }
+
+    /// Places the keys named by the overlay first, in that order; everything else
+    /// keeps its inherited order behind them. Naming a key that does not exist is
+    /// an error: silently ignoring it would leave the resume in the base order.
+    private static <T> List<T> reorder(String what, List<T> entries, List<String> order,
+            Function<T, String> key) {
+        if (order == null || entries == null) {
+            return entries;
+        }
+        var remaining = new LinkedHashMap<String, T>();
+        entries.forEach(entry -> remaining.put(String.valueOf(key.apply(entry)), entry));
+        var ordered = new java.util.ArrayList<T>(entries.size());
+        for (String wanted : order) {
+            var entry = remaining.remove(wanted);
+            if (entry == null) {
+                throw new IllegalArgumentException(
+                        "Cannot order %s [%s]: no such key, available: %s"
+                                .formatted(what, wanted, remaining.keySet()));
+            }
+            ordered.add(entry);
+        }
+        ordered.addAll(remaining.values());
+        return List.copyOf(ordered);
     }
 
     private static <T> T pick(T overlay, T base) {

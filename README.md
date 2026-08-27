@@ -180,6 +180,20 @@ switcher.
 | items inside a section | merged by `header` |
 | `social` | merged by `name` |
 
+**Order** comes from the base. To change it, name the keys in an `order` list —
+section titles at the top level, item headers inside a section:
+
+```yaml
+sections:
+  - title: Skills
+    order: ["Artificial Intelligence", "Cloud & platform", "Java", "Advocacy"]
+```
+
+Keys named there come first, in that order; the others follow in their inherited
+order. This is deliberately not "restate the list to reorder it": restating a list
+copies its content too, which then drifts from the base. Naming a key that does not
+exist fails the page, like `remove`.
+
 Anything absent is inherited. A key unknown to the base is **appended** after the
 inherited entries — that is how you add a section or an item. `remove: true` drops
 an entry, and a `remove` on a key that does not exist **fails that page with the
