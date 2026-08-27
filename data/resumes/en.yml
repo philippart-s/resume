@@ -70,7 +70,7 @@ sections:
         content: |
           **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
-          - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 200 applications**.
+          - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 100 applications**.
           - Designed the continuous integration platform — Jenkins 2 as pipelines-as-code (several hundred pipelines in production), **SonarQube**, GitHub — then the CD chain on OpenShift.
           - Built a platform engineering offering for 250 developers by industrialising the foundations and the pipelines.
           - Tech lead of a team of 5 people.

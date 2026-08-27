@@ -70,7 +70,7 @@ sections:
         content: |
           **Harmonie-Mutuelle**, (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
-          - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 200 applications**.
+          - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeurs sur plus de 100 applications**.
           - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
           - Mise en place d'une platforme engineering pour 250 développeuses / développeurs par industrialisation des socles et des pipelines.
           - Tech lead d'une équipe de 5 personnes.
