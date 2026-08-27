@@ -106,11 +106,14 @@
     margin-top: 0.5rem;
   }
 
-  /* Les chiffres clés sur une seule ligne, entre deux filets */
+  /* Les chiffres clés sur une seule ligne, entre deux filets. Colonnes de
+     largeur égale comme la grille du web, et séparateurs en bordures : à
+     l'écran ils viennent d'un gap-px révélant un fond coloré, or les fonds ne
+     sont pas imprimés par défaut. */
   .resume-figures {
     display: flex !important;
     flex-wrap: nowrap;
-    gap: 0 1rem;
+    gap: 0 !important;
     border-top: 1px solid #999 !important;
     border-bottom: 1px solid #999 !important;
     padding: 0.55rem 0 !important;
@@ -118,7 +121,18 @@
   }
 
   .resume-figures > * {
-    padding: 0 !important;
+    flex: 1 1 0 !important;
+    padding: 0 0.7rem !important;
+    border-left: 1px solid #bbb !important;
+  }
+
+  .resume-figures > *:first-child {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+  }
+
+  .resume-figures > *:last-child {
+    padding-right: 0 !important;
   }
 
   .resume-figures dt {
