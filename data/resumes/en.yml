@@ -68,7 +68,7 @@ sections:
       - header: "Harmonie Mutuelle, 2008 → 2022"
         title: "Tech Lead / Software Architect & Platform Engineer"
         content: |
-          **Harmonie-Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+          **Harmonie Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
           - Designed and ran the application foundations (Spring, JEE, Angular) and the internal frameworks used by **250 developers across more than 100 applications**.
           - Designed the continuous integration platform, Jenkins 2 as pipelines-as-code (several hundred pipelines in production), SonarQube, GitHub, then the CD chain on OpenShift.

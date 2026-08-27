@@ -67,7 +67,7 @@ sections:
       - header: "Harmonie Mutuelle, 2008 → 2022"
         title: "Tech Lead / Architecte logiciel & Platform Engineer"
         content: |
-          **Harmonie-Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
+          **Harmonie Mutuelle** (Tours) _Java · Spring · Jenkins · SonarQube · Docker · Kubernetes · OpenShift_
 
           - Conception et exploitation des socles applicatifs (Spring, JEE, Angular) et des frameworks internes utilisés par **250 développeuses / développeurs sur plus de 100 applications**.
           - Conception de la plateforme d'intégration continue, Jenkins 2 en pipelines-as-code (plusieurs centaines de pipelines en production), **SonarQube**, GitHub, puis de la chaîne CD sur OpenShift.
